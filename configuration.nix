@@ -131,6 +131,9 @@ in
     pciutils
     vulkan-tools
     lutris
+	krita
+	gimp
+	inkscape
   ];
 
   fonts.fonts = with pkgs; [
