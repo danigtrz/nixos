@@ -2,15 +2,26 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+flake-overlays:
 
+{ config, pkgs, options, lib, ... }:
+
+let
+  nvidia-offload = pkgs.writeShellScriptBin "nvidia-offload" ''
+    export __NV_PRIME_RENDER_OFFLOAD=1
+    export __NV_PRIME_RENDER_OFFLOAD_PROVIDER=NVIDIA-G0
+    export __GLX_VENDOR_LIBRARY_NAME=nvidia
+    export __VK_LAYER_NV_optimus=NVIDIA_only
+    exec "$@"
+  '';
+in
 {
   imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+    [
+      ./hardware-configuration.nix 
+    ]; 
 
-  # Bootloader.
+  # bootloader
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
@@ -63,12 +74,70 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  # nvidia
+  # environment.systemPackages = [ nvidia-offload ];
+  services.xserver.videoDrivers = [ "nvidia" ];
+  hardware.nvidia.prime = {
+    sync.enable = true;
+    intelBusId = "PCI:0:2:0";
+    nvidiaBusId = "PCI:1:0:0";
+  };
+  hardware.opengl = {
+    enable = true;
+    driSupport = true;
+    driSupport32Bit = true;
+  };
+  hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
+
+  # zsh
+  programs.zsh.enable = true;
+  users.defaultUserShell = pkgs.zsh;
+  environment.shells = with pkgs; [ zsh ];
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     vim
+    neovim
     wget
-    git 
+    git
+    gcc
+    python3
+    p7zip
+    zip
+    unzip
+    firefox
+    kitty
+    wofi
+    dunst
+    pipewire
+    wireplumber
+    alsa-lib
+    alsa-utils
+    flac
+    hyprpaper
+    wayland
+    wayland-scanner
+    wayland-utils
+    wayland-protocols
+    xwayland
+    egl-wayland
+    wlr-randr
+    networkmanagerapplet
+    neofetch
+    zathura
+    pciutils
+    vulkan-tools
+    lutris
+  ];
+
+  fonts.fonts = with pkgs; [
+    noto-fonts
+    noto-fonts-cjk
+    noto-fonts-emoji
+    liberation_ttf
+    fira-code
+    fira-code-symbols
   ];
 
   # cachix for hyprland
@@ -76,6 +145,8 @@
     substituters = ["https://hyprland.cachix.org"];
     trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
   };
+
+  nixpkgs.overlays = flake-overlays;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -87,12 +158,23 @@
 
   xdg.portal = {
     enable = true;
-    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+    wlr.enable = true;
   };
+
+  security.rtkit.enable = true;
 
   # List services that you want to enable:
 
   services = {
+    pipewire = {
+      enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      jack.enable = true;
+      pulse.enable = true;
+      wireplumber.enable = true;
+    };
+
     flatpak.enable = true;
   };
 

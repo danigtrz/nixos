@@ -13,22 +13,28 @@
       url = "github:hyprwm/Hyprland";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nix-matlab = {
+      url = "gitlab:doronbehar/nix-matlab";
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager, hyprland }:
+  outputs = { self, nixpkgs, home-manager, hyprland, nix-matlab }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
         inherit system;
         config.allowUnfree = true;
       };
-      lib = nixpkgs.lib;
+      flake-overlays = [
+        nix-matlab.overlay
+      ];
     in {
       nixosConfigurations = {
-        nixos = lib.nixosSystem {
+        nixos = nixpkgs.lib.nixosSystem {
           inherit system;
           modules = [
-            ./configuration.nix
+	    (import ./configuration.nix flake-overlays)
 
             home-manager.nixosModules.home-manager {
               home-manager.useGlobalPkgs = true;
