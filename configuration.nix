@@ -19,6 +19,7 @@ in
   imports =
     [
       ./hardware-configuration.nix 
+      ./waybar.nix
     ]; 
 
   # bootloader
@@ -106,6 +107,7 @@ in
     p7zip
     zip
     unzip
+    killall
     firefox
     kitty
     wofi
