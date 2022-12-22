@@ -65,7 +65,7 @@ in
   users.users.rafa = {
     isNormalUser = true;
     description = "Rafa";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "video" ];
     packages = with pkgs; [];
   };
 
@@ -108,6 +108,7 @@ in
     zip
     unzip
     killall
+	light
     firefox
     kitty
     wofi
@@ -125,7 +126,6 @@ in
     xwayland
     egl-wayland
     wlr-randr
-    networkmanagerapplet
     neofetch
     zathura
     pciutils
