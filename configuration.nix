@@ -108,7 +108,6 @@ in
     zip
     unzip
     killall
-	light
     firefox
     kitty
     wofi
@@ -135,6 +134,8 @@ in
 	gimp
 	inkscape
   ];
+
+  programs.light.enable = true;
 
   fonts.fonts = with pkgs; [
     noto-fonts
