@@ -112,6 +112,7 @@ in
     kitty
     wofi
     dunst
+	ranger
     pipewire
     wireplumber
     alsa-lib
