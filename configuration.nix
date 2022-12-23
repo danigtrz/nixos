@@ -127,12 +127,6 @@ flake-overlays:
 	inkscape
   ];
 
-  # steam
-  programs.steam = {
-    enable = true;
-	remotePlay.openFirewall = true;
-  };
-
   # light
   programs.light.enable = true;
 
