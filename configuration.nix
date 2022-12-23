@@ -125,6 +125,7 @@ in
     wayland-protocols
     xwayland
     egl-wayland
+	wl-clipboard
     wlr-randr
     neofetch
     zathura
