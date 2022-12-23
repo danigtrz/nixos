@@ -97,6 +97,7 @@ flake-overlays:
     p7zip
     zip
     unzip
+	glxinfo
     killall
     firefox
     kitty
