@@ -7,7 +7,8 @@
 			luafile /home/rafa/.nixos/modules/programs/neovim/settings.lua
 		'';
 		plugins = with pkgs.vimPlugins; [
-
+			indentLine
 		];
 	};
 }
+
