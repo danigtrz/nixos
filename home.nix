@@ -1,6 +1,10 @@
 { config, pkgs, ... }:
 
 {
+	imports = [
+		./modules/programs/neovim.nix
+	];
+
 	home.username = "rafa";
 	home.homeDirectory = "/home/rafa";
 
