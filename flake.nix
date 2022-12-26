@@ -34,7 +34,7 @@
         nixos = nixpkgs.lib.nixosSystem {
           inherit system;
           modules = [
-	    (import ./configuration.nix flake-overlays)
+            (import ./configuration.nix flake-overlays)
 
             home-manager.nixosModules.home-manager {
               home-manager.useGlobalPkgs = true;
