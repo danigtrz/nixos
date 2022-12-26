@@ -139,6 +139,9 @@ flake-overlays:
     lutris
   ];
 
+  # display manager
+  services.xserver.displayManager.sddm.enable = true;
+
   # light
   programs.light.enable = true;
 
