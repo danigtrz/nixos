@@ -2,7 +2,7 @@
 
 {
 	imports = [
-		./modules/programs/neovim.nix
+		./modules/programs/neovim/neovim.nix
 	];
 
 	home.username = "rafa";
