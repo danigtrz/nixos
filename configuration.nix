@@ -7,11 +7,10 @@ flake-overlays:
 { config, pkgs, options, lib, ... }:
 
 {
-  imports =
-    [
-      ./hardware-configuration.nix 
-      ./waybar.nix
-    ]; 
+  imports = [
+    ./hardware-configuration.nix 
+    ./modules/programs/waybar/waybar.nix
+  ]; 
 
   # bootloader
   boot.loader.systemd-boot.enable = true;
@@ -115,16 +114,16 @@ flake-overlays:
     wayland-protocols
     xwayland
     egl-wayland
-	wl-clipboard
+    wl-clipboard
     wlr-randr
     neofetch
     zathura
     pciutils
     vulkan-tools
     lutris
-	krita
-	gimp
-	inkscape
+    krita
+    gimp
+    inkscape
   ];
 
   # light
