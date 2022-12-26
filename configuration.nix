@@ -78,27 +78,35 @@ flake-overlays:
 
   # packages
   environment.systemPackages = with pkgs; [
+ 
+    # command line utilities
     vim
     wget
     git
+    killall
+    pciutils
+
+    # graphics command line utilities
+    glxinfo
+    vulkan-tools
+
+    # programming
     gcc
     python3
+ 
+    # archival / compression
     p7zip
     zip
     unzip
-    glxinfo
-    killall
-    firefox
-    kitty
-    wofi
-    dunst
-    ranger
+
+    # sound
     pipewire
     wireplumber
     alsa-lib
     alsa-utils
     flac
-    hyprpaper
+
+    # wayland / desktop
     wayland
     wayland-scanner
     wayland-utils
@@ -107,14 +115,28 @@ flake-overlays:
     egl-wayland
     wl-clipboard
     wlr-randr
-    neofetch
-    zathura
-    pciutils
-    vulkan-tools
-    lutris
+
+    # web
+    firefox
+
+    # image applications
+    inkscape
     krita
     gimp
-    inkscape
+
+    # desktop utilities
+    hyprpaper
+    dunst
+    wofi
+
+    # misc. command line applications
+    neofetch
+    ranger
+
+    # misc. applications
+    kitty
+    zathura
+    lutris
   ];
 
   # light
