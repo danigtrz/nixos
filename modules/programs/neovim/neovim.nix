@@ -4,7 +4,7 @@
 	programs.neovim = {
 		enable = true;
 		extraConfig = ''
-			luafile ./settings.lua
+			luafile $NIXOS_CONFIG/modules/programs/neovim/settings.lua
 		'';
 		plugins = with pkgs.vimPlugins; [
 
