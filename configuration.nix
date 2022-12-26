@@ -1,7 +1,3 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
 flake-overlays:
 
 { config, pkgs, options, lib, ... }:
@@ -17,22 +13,18 @@ flake-overlays:
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
 
-  networking.hostName = "nixos"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  # hostname
+  networking.hostName = "nixos";
 
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-  # Enable networking
+  # enable networking
   networking.networkmanager.enable = true;
+  # networking.wireless.enable = true;
 
-  # Set your time zone.
+  # time zone
   time.timeZone = "America/Tijuana";
 
-  # Select internationalisation properties.
+  # internationalisation properties
   i18n.defaultLocale = "en_US.UTF-8";
-
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "en_US.UTF-8";
     LC_IDENTIFICATION = "en_US.UTF-8";
@@ -45,27 +37,27 @@ flake-overlays:
     LC_TIME = "en_US.UTF-8";
   };
 
-  # Configure keymap in X11
+  # keymap in X11
   services.xserver = {
     layout = "us";
     xkbVariant = "altgr-intl";
   };
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
+  # user
   users.users.rafa = {
     isNormalUser = true;
     description = "Rafa";
     extraGroups = [ "networkmanager" "wheel" "video" ];
-    packages = with pkgs; [];
+    # packages = with pkgs; [];
   };
 
   # enable flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  # Allow unfree packages
+  # allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  # nvidia
+  # nvidia and graphics
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia.prime = {
     sync.enable = true;
@@ -84,8 +76,7 @@ flake-overlays:
   users.defaultUserShell = pkgs.zsh;
   environment.shells = with pkgs; [ zsh ];
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
+  # packages
   environment.systemPackages = with pkgs; [
     vim
     wget
@@ -95,13 +86,13 @@ flake-overlays:
     p7zip
     zip
     unzip
-	glxinfo
+    glxinfo
     killall
     firefox
     kitty
     wofi
     dunst
-	ranger
+    ranger
     pipewire
     wireplumber
     alsa-lib
@@ -129,6 +120,7 @@ flake-overlays:
   # light
   programs.light.enable = true;
 
+  # fonts
   fonts.fonts = with pkgs; [
     noto-fonts
     noto-fonts-cjk
@@ -146,14 +138,6 @@ flake-overlays:
 
   nixpkgs.overlays = flake-overlays;
 
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
   xdg.portal = {
     enable = true;
     wlr.enable = true;
@@ -161,36 +145,25 @@ flake-overlays:
 
   security.rtkit.enable = true;
 
-  # List services that you want to enable:
-
-  services = {
-    pipewire = {
-      enable = true;
-      alsa.enable = true;
-      alsa.support32Bit = true;
-      jack.enable = true;
-      pulse.enable = true;
-      wireplumber.enable = true;
-    };
-
-    flatpak.enable = true;
+  # sound
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    jack.enable = true;
+    pulse.enable = true;
+    wireplumber.enable = true;
   };
 
-  # Enable the OpenSSH daemon.
+  # bluetooth
+  hardware.bluetooth.enable = true;
+  services.blueman.enable = true;
+
+  # flatpak
+  services.flatpak.enable = true;
+
+  # openssh
   # services.openssh.enable = true;
 
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
-
-  # This value determines the NixOS release from which the default
-  # settings for stateful data, like file locations and database versions
-  # on your system were taken. It‘s perfectly fine and recommended to leave
-  # this value at the release version of the first install of this system.
-  # Before changing this value read the documentation for this option
-  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "22.11"; # Did you read the comment?
-
+  system.stateVersion = "22.11";
 }
