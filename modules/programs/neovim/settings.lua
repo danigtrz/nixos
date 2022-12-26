@@ -1,7 +1,19 @@
 local opt = vim.opt
 local g = vim.g
 
+vim.cmd [[
+	set nowrap
+	set nobackup
+	set nowritebackup
+	set noerrorbells
+	set noswapfile
+]]
+
 g.mapleader = ' '
+
+-- undo file
+opt.undofile = true
+opt.undodir = "/home/rafa/.cache/"
 
 -- indent
 opt.smartindent = true
