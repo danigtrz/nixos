@@ -47,7 +47,7 @@ flake-overlays:
   users.users.rafa = {
     isNormalUser = true;
     description = "Rafa";
-    extraGroups = [ "networkmanager" "wheel" "video" ];
+    extraGroups = [ "networkmanager" "wheel" "video" "audio" ];
     # packages = with pkgs; [];
   };
 
@@ -138,9 +138,6 @@ flake-overlays:
     zathura
     lutris
   ];
-
-  # display manager
-  services.xserver.displayManager.sddm.enable = true;
 
   # light
   programs.light.enable = true;
