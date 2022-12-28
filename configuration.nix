@@ -72,7 +72,12 @@ flake-overlays:
   hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
 
   # zsh
-  programs.zsh.enable = true;
+  programs.zsh = {
+    enable = true;
+    shellAliases = {
+      re = "sudo nixos-rebuild switch --flake .#"; 
+    };
+  };
   users.defaultUserShell = pkgs.zsh;
   environment.shells = with pkgs; [ zsh ];
 
