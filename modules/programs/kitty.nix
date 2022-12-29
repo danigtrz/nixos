@@ -6,9 +6,9 @@
     settings = {
       enable_audio_bell = false;
       window_padding_width = 8;
-      confirm_os_window_close = false;
+      confirm_os_window_close = 0;
     };
-    font = "Fira Code";
+    font.name = "Fira Code";
     theme = "Catppuccin-Mocha";
   };
 }
