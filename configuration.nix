@@ -139,6 +139,11 @@ flake-overlays:
     steam-run
     (steam.override { withJava = true; })
 
+    # spotify
+    spotify
+    spotifywm
+    spicetify-cli
+
     # misc. command line applications
     neofetch
     ranger
@@ -146,8 +151,8 @@ flake-overlays:
     # misc. applications
     kitty
     zathura
-    steam-run
     lutris
+    discord
   ];
 
   # light
@@ -208,7 +213,7 @@ flake-overlays:
   services.blueman.enable = true;
 
   # flatpak
-  services.flatpak.enable = true;
+  # services.flatpak.enable = true;
 
   # openssh
   # services.openssh.enable = true;
