@@ -151,8 +151,6 @@ flake-overlays:
 
     # misc. applications
     libreoffice-fresh
-    kitty
-    zathura
     lutris
     discord
   ];
