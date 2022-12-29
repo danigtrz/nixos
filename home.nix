@@ -3,6 +3,7 @@
 {
   imports = [
     ./modules/programs/neovim/neovim.nix
+    ./modules/programs/kitty.nix
   ];
 
   home.username = "rafa";
