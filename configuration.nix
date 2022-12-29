@@ -117,6 +117,7 @@ flake-overlays:
     wayland-utils
     wayland-protocols
     xwayland
+    wlroots
     egl-wayland
     wl-clipboard
     wlr-randr
@@ -134,6 +135,10 @@ flake-overlays:
     dunst
     wofi
 
+    # steam
+    steam-run
+    (steam.override { withJava = true; })
+
     # misc. command line applications
     neofetch
     ranger
@@ -141,11 +146,27 @@ flake-overlays:
     # misc. applications
     kitty
     zathura
+    steam-run
     lutris
   ];
 
   # light
   programs.light.enable = true;
+
+  # steam
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true;
+    dedicatedServer.openFirewall = true;
+  };
+  nixpkgs.config.packageOverrides = pkgs: {
+    steam = pkgs.steam.override {
+      extraPkgs = pkgs: with pkgs; [
+        libgdiplus
+      ];
+    };
+  };
+  programs.java.enable = true;
 
   # fonts
   fonts.fonts = with pkgs; [
