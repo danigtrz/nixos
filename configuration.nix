@@ -149,6 +149,7 @@ flake-overlays:
     ranger
 
     # misc. applications
+    libreoffice-fresh
     kitty
     zathura
     lutris
