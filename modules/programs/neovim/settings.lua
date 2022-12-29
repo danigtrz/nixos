@@ -2,6 +2,7 @@ local opt = vim.opt
 local g = vim.g
 
 vim.cmd [[
+	syntax enable
 	set nowrap
 	set nobackup
 	set nowritebackup

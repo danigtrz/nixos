@@ -98,6 +98,7 @@ flake-overlays:
     # programming
     gcc
     python3
+    texlive.combined.scheme-full
  
     # archival / compression
     p7zip
