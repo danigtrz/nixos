@@ -3,227 +3,233 @@ flake-overlays:
 { config, pkgs, options, lib, ... }:
 
 {
-  imports = [
-    ./hardware-configuration.nix 
-    ./modules/programs/waybar/waybar.nix
-  ]; 
+	imports = [
+		# hardware
+		./hardware-configuration.nix
 
-  # bootloader
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.efi.efiSysMountPoint = "/boot/efi";
+		# theme
+		./themes/nord.nix
 
-  # hostname
-  networking.hostName = "nixos";
+		# waybar
+		./modules/programs/waybar/waybar.nix
+	]; 
 
-  # enable networking
-  networking.networkmanager.enable = true;
-  # networking.wireless.enable = true;
+	# bootloader
+	boot.loader.systemd-boot.enable = true;
+	boot.loader.efi.canTouchEfiVariables = true;
+	boot.loader.efi.efiSysMountPoint = "/boot/efi";
 
-  # time zone
-  time.timeZone = "America/Tijuana";
+	# hostname
+	networking.hostName = "nixos";
 
-  # internationalisation properties
-  i18n.defaultLocale = "en_US.UTF-8";
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "en_US.UTF-8";
-    LC_IDENTIFICATION = "en_US.UTF-8";
-    LC_MEASUREMENT = "en_US.UTF-8";
-    LC_MONETARY = "en_US.UTF-8";
-    LC_NAME = "en_US.UTF-8";
-    LC_NUMERIC = "en_US.UTF-8";
-    LC_PAPER = "en_US.UTF-8";
-    LC_TELEPHONE = "en_US.UTF-8";
-    LC_TIME = "en_US.UTF-8";
-  };
+	# enable networking
+	networking.networkmanager.enable = true;
+	# networking.wireless.enable = true;
 
-  # keymap in X11
-  services.xserver = {
-    layout = "us";
-    xkbVariant = "altgr-intl";
-  };
+	# time zone
+	time.timeZone = "America/Tijuana";
 
-  # user
-  users.users.rafa = {
-    isNormalUser = true;
-    description = "Rafa";
-    extraGroups = [ "networkmanager" "wheel" "video" "audio" ];
-    # packages = with pkgs; [];
-  };
+	# internationalisation properties
+	i18n.defaultLocale = "en_US.UTF-8";
+	i18n.extraLocaleSettings = {
+		LC_ADDRESS = "en_US.UTF-8";
+		LC_IDENTIFICATION = "en_US.UTF-8";
+		LC_MEASUREMENT = "en_US.UTF-8";
+		LC_MONETARY = "en_US.UTF-8";
+		LC_NAME = "en_US.UTF-8";
+		LC_NUMERIC = "en_US.UTF-8";
+		LC_PAPER = "en_US.UTF-8";
+		LC_TELEPHONE = "en_US.UTF-8";
+		LC_TIME = "en_US.UTF-8";
+	};
 
-  # enable flakes
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+	# keymap in X11
+	services.xserver = {
+		layout = "us";
+		xkbVariant = "altgr-intl";
+	};
 
-  # allow unfree packages
-  nixpkgs.config.allowUnfree = true;
+	# user
+	users.users.rafa = {
+		isNormalUser = true;
+		description = "Rafa";
+		extraGroups = [ "networkmanager" "wheel" "video" "audio" ];
+		# packages = with pkgs; [];
+	};
 
-  # nvidia and graphics
-  services.xserver.videoDrivers = [ "nvidia" ];
-  hardware.nvidia.prime = {
-    sync.enable = true;
-    intelBusId = "PCI:0:2:0";
-    nvidiaBusId = "PCI:1:0:0";
-  };
-  hardware.opengl = {
-    enable = true;
-    driSupport = true;
-    driSupport32Bit = true;
-  };
-  hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
+	# enable flakes
+	nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  # zsh
-  programs.zsh = {
-    enable = true;
-    shellAliases = {
-      re = "sudo nixos-rebuild switch --flake .#"; 
-    };
-  };
-  users.defaultUserShell = pkgs.zsh;
-  environment.shells = with pkgs; [ zsh ];
+	# allow unfree packages
+	nixpkgs.config.allowUnfree = true;
 
-  # packages
-  environment.systemPackages = with pkgs; [
- 
-    # command line utilities
-    vim
-    wget
-    git
-    killall
-    pciutils
+	# nvidia and graphics
+	services.xserver.videoDrivers = [ "nvidia" ];
+	hardware.nvidia.prime = {
+		sync.enable = true;
+		intelBusId = "PCI:0:2:0";
+		nvidiaBusId = "PCI:1:0:0";
+	};
+	hardware.opengl = {
+		enable = true;
+		driSupport = true;
+		driSupport32Bit = true;
+	};
+	hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
 
-    # graphics command line utilities
-    glxinfo
-    vulkan-tools
+	# zsh
+	programs.zsh = {
+		enable = true;
+		shellAliases = {
+			re = "sudo nixos-rebuild switch --flake .#"; 
+		};
+	};
+	users.defaultUserShell = pkgs.zsh;
+	environment.shells = with pkgs; [ zsh ];
 
-    # programming
-    gcc
-    cmake
-    SDL2
-    SDL2_ttf
-    SDL2_gfx
-    SDL2_sound
-    SDL2_mixer
-    SDL2_image
-    python3
-    texlive.combined.scheme-full
- 
-    # archival / compression
-    p7zip
-    zip
-    unzip
+	# packages
+	environment.systemPackages = with pkgs; [
 
-    # sound
-    pipewire
-    wireplumber
-    alsa-lib
-    alsa-utils
-    flac
+		# command line utilities
+		vim
+		wget
+		git
+		killall
+		pciutils
 
-    # wayland / desktop
-    wayland
-    wayland-scanner
-    wayland-utils
-    wayland-protocols
-    xwayland
-    wlroots
-    egl-wayland
-    wl-clipboard
-    wlr-randr
+		# graphics command line utilities
+		glxinfo
+		vulkan-tools
 
-    # web
-    firefox
+		# programming
+		gcc
+		cmake
+		SDL2
+		SDL2_ttf
+		SDL2_gfx
+		SDL2_sound
+		SDL2_mixer
+		SDL2_image
+		python3
+		texlive.combined.scheme-full
 
-    # image applications
-    inkscape
-    krita
-    gimp
+		# archival / compression
+		p7zip
+		zip
+		unzip
 
-    # desktop utilities
-    hyprpaper
-    dunst
-    wofi
+		# sound
+		pipewire
+		wireplumber
+		alsa-lib
+		alsa-utils
+		flac
 
-    # steam
-    steam-run
-    (steam.override { withJava = true; })
+		# wayland / desktop
+		wayland
+		wayland-scanner
+		wayland-utils
+		wayland-protocols
+		xwayland
+		wlroots
+		egl-wayland
+		wl-clipboard
+		wlr-randr
 
-    # spotify
-    spotify
-    spotifywm
-    spicetify-cli
+		# web
+		firefox
 
-    # misc. command line applications
-    neofetch
-    ranger
+		# image applications
+		inkscape
+		krita
+		gimp
 
-    # misc. applications
-    libreoffice-fresh
-    lutris
-    discord
-  ];
+		# desktop utilities
+		hyprpaper
+		dunst
+		wofi
 
-  # light
-  programs.light.enable = true;
+		# steam
+		steam-run
+		(steam.override { withJava = true; })
 
-  # steam
-  programs.steam = {
-    enable = true;
-    remotePlay.openFirewall = true;
-    dedicatedServer.openFirewall = true;
-  };
-  nixpkgs.config.packageOverrides = pkgs: {
-    steam = pkgs.steam.override {
-      extraPkgs = pkgs: with pkgs; [
-        libgdiplus
-      ];
-    };
-  };
-  programs.java.enable = true;
+		# spotify
+		spotify
+		spotifywm
+		spicetify-cli
 
-  # fonts
-  fonts.fonts = with pkgs; [
-    noto-fonts
-    noto-fonts-cjk
-    noto-fonts-emoji
-    liberation_ttf
-    fira-code
-    fira-code-symbols
-  ];
+		# misc. command line applications
+		neofetch
+		ranger
 
-  # cachix for hyprland
-  nix.settings = {
-    substituters = ["https://hyprland.cachix.org"];
-    trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
-  };
+		# misc. applications
+		libreoffice-fresh
+		lutris
+		discord
+	];
 
-  nixpkgs.overlays = flake-overlays;
+	# light
+	programs.light.enable = true;
 
-  xdg.portal = {
-    enable = true;
-    wlr.enable = true;
-  };
+	# steam
+	programs.steam = {
+		enable = true;
+		remotePlay.openFirewall = true;
+		dedicatedServer.openFirewall = true;
+	};
+	nixpkgs.config.packageOverrides = pkgs: {
+		steam = pkgs.steam.override {
+			extraPkgs = pkgs: with pkgs; [
+				libgdiplus
+			];
+		};
+	};
+	programs.java.enable = true;
 
-  security.rtkit.enable = true;
+	# fonts
+	fonts.fonts = with pkgs; [
+		noto-fonts
+		noto-fonts-cjk
+		noto-fonts-emoji
+		liberation_ttf
+		fira-code
+		fira-code-symbols
+	];
 
-  # sound
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    jack.enable = true;
-    pulse.enable = true;
-    wireplumber.enable = true;
-  };
+	# cachix for hyprland
+	nix.settings = {
+		substituters = ["https://hyprland.cachix.org"];
+		trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
+	};
 
-  # bluetooth
-  hardware.bluetooth.enable = true;
-  services.blueman.enable = true;
+	nixpkgs.overlays = flake-overlays;
 
-  # flatpak
-  # services.flatpak.enable = true;
+	xdg.portal = {
+		enable = true;
+		wlr.enable = true;
+	};
 
-  # openssh
-  # services.openssh.enable = true;
+	security.rtkit.enable = true;
 
-  system.stateVersion = "22.11";
+	# sound
+	services.pipewire = {
+		enable = true;
+		alsa.enable = true;
+		alsa.support32Bit = true;
+		jack.enable = true;
+		pulse.enable = true;
+		wireplumber.enable = true;
+	};
+
+	# bluetooth
+	hardware.bluetooth.enable = true;
+	services.blueman.enable = true;
+
+	# flatpak
+	# services.flatpak.enable = true;
+
+	# openssh
+	# services.openssh.enable = true;
+
+	system.stateVersion = "22.11";
 }
