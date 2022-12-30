@@ -39,4 +39,3 @@ opt.autoread = true
 opt.incsearch = true
 opt.hidden = true
 -- opt.shortmess = "atI"
-
