@@ -97,6 +97,7 @@ flake-overlays:
 
     # programming
     gcc
+    SDL2
     python3
     texlive.combined.scheme-full
  
