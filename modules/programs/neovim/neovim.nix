@@ -1,35 +1,35 @@
 { config, lib, pkgs, ...}:
 
 {
-  programs.neovim = {
-    enable = true;
-    extraConfig = ''
-      luafile /home/rafa/.nixos/modules/programs/neovim/settings.lua
-      luafile /home/rafa/.nixos/modules/programs/neovim/treesitter.lua
-      lua require'nvim-tree'.setup {}
+	programs.neovim = {
+		enable = true;
+		extraConfig = ''
+			luafile /home/rafa/.nixos/modules/programs/neovim/settings.lua
+			luafile /home/rafa/.nixos/modules/programs/neovim/treesitter.lua
+			lua require'nvim-tree'.setup {}
 
-      " vimtex configuration
-      let g:vimtex_view_method = 'zathura'
-    '';
-    plugins = with pkgs.vimPlugins; [
-      
-      # file tree
-      nvim-web-devicons
-      nvim-tree-lua
+			" vimtex configuration
+			let g:vimtex_view_method = 'zathura'
+		'';
+		plugins = with pkgs.vimPlugins; [
 
-      # lsp
-      nvim-lspconfig
-      nvim-compe
+			# file tree
+			nvim-web-devicons
+			nvim-tree-lua
 
-      # languages
-      vimtex
-      vim-nix
+			# lsp
+			nvim-lspconfig
+			nvim-compe
 
-      # highlighting
-      nvim-treesitter.withAllGrammars
+			# languages
+			vimtex
+			vim-nix
 
-      # other
-      indentLine
-    ];
-  };
+			# highlighting
+			nvim-treesitter.withAllGrammars
+
+			# other
+			indentLine
+		];
+	};
 }
