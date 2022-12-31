@@ -14,16 +14,16 @@
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 
-		stylix = {
-			url = "github:danth/stylix";
-		};
+		# stylix = {
+		# 	url = "github:danth/stylix";
+		# };
 
 		nix-matlab = {
 			url = "gitlab:doronbehar/nix-matlab";
 		};
 	};
 
-	outputs = { self, nixpkgs, home-manager, hyprland, stylix, nix-matlab }:
+	outputs = { self, nixpkgs, home-manager, hyprland, nix-matlab }:
 	let
 		system = "x86_64-linux";
 		
@@ -57,11 +57,11 @@
 						nvidiaPatches = true;
 					}; }
 
-					stylix.nixosModules.stylix
-					{
-                        stylix.image = ./wallpapers/3_nap3_4k.jpg;
-                        stylix.polarity = "dark";
-					}
+					# stylix.nixosModules.stylix
+					# {
+                    #     stylix.image = ./wallpapers/3_nap3_4k.jpg;
+                    #     stylix.polarity = "dark";
+					# }
 				];
 			};
 		};

@@ -53,18 +53,18 @@
 
 	gtk = {
 		enable = true;
-		# theme = {
-		# 	name = "Catppuccin-Mocha-Pink";
-		# 	package = pkgs.catppuccin-gtk;
-		# };
+		theme = {
+			name = "Catppuccin-Mocha-Pink";
+			package = pkgs.catppuccin-gtk;
+		};
 		iconTheme = {
 			name = "Papirus-Dark";
 			package = pkgs.papirus-icon-theme;
 		};
-		# font = {
-		# 	name = "DejaVu Sans";
-		# 	size = 11;
-		# };
+		font = {
+			name = "DejaVu Sans";
+			size = 11;
+		};
 	};
 
 	home.stateVersion = "22.11";
