@@ -7,9 +7,6 @@ flake-overlays:
 		# hardware
 		./hardware-configuration.nix
 
-		# theme
-		./themes/nord.nix
-
 		# waybar
 		./modules/programs/waybar/waybar.nix
 	]; 

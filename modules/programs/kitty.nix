@@ -9,72 +9,73 @@
 			confirm_os_window_close = 0;
 		};
 		font.name = "Fira Code";
+		# theme = "Catppuccin-Mocha";
 		extraConfig = ''
 			# basic colors
-			foreground              ${nord6}
-			background              ${nord0}
-			selection_foreground    ${nord0}
-			selection_background    ${nord4}
+			foreground              ${lib.theme.nord6}
+			background              ${lib.theme.nord0}
+			selection_foreground    ${lib.theme.nord0}
+			selection_background    ${lib.theme.nord4}
 
 			# cursor colors
-			cursor                  ${nord4}
-			cursor_text_color       ${nord0}
+			cursor                  ${lib.theme.nord4}
+			cursor_text_color       ${lib.theme.nord0}
 
 			# url underline color when hovering with mouse
-			url_color               ${nord4}
+			url_color               ${lib.theme.nord4}
 
 			# os window titlebar colors
 			wayland_titlebar_color system
 			macos_titlebar_color system
 
 			# tab bar colors
-			active_tab_foreground   ${nord6}
-			active_tab_background   ${nord0}
-			inactive_tab_foreground ${nord4}
-			inactive_tab_background ${nord0}
-			tab_bar_background      ${nord0}
+			active_tab_foreground   ${lib.theme.nord6}
+			active_tab_background   ${lib.theme.nord0}
+			inactive_tab_foreground ${lib.theme.nord4}
+			inactive_tab_background ${lib.theme.nord0}
+			tab_bar_background      ${lib.theme.nord0}
 
 			# colors for marks (marked text in the terminal)
-			mark1_foreground ${nord0}
-			mark1_background ${nord1}
-			mark2_foreground ${nord0}
-			mark2_background ${nord2}
-			mark3_foreground ${nord0}
-			mark3_background ${nord3}
+			mark1_foreground ${lib.theme.nord0}
+			mark1_background ${lib.theme.nord1}
+			mark2_foreground ${lib.theme.nord0}
+			mark2_background ${lib.theme.nord2}
+			mark3_foreground ${lib.theme.nord0}
+			mark3_background ${lib.theme.nord3}
 
 			# the 16 terminal colors
 
 			# black
-			color0 ${nord1}
-			color8 ${nord2}
+			color0 ${lib.theme.nord1}
+			color8 ${lib.theme.nord2}
 
 			# red
-			color1 ${nord11}
-			color9 ${nord11}
+			color1 ${lib.theme.nord11}
+			color9 ${lib.theme.nord11}
 
 			# green
-			color2  ${nord14}
-			color10 ${nord14}
+			color2  ${lib.theme.nord14}
+			color10 ${lib.theme.nord14}
 
 			# yellow
-			color3  ${nord13}
-			color11 ${nord13}
+			color3  ${lib.theme.nord13}
+			color11 ${lib.theme.nord13}
 
 			# blue
-			color4  ${nord9}
-			color12 ${nord9}
+			color4  ${lib.theme.nord9}
+			color12 ${lib.theme.nord9}
 
 			# magenta
-			color5  ${nord15}
-			color13 ${nord15}
+			color5  ${lib.theme.nord15}
+			color13 ${lib.theme.nord15}
 
 			# cyan
-			color6  ${nord7}
-			color14 ${nord7}
+			color6  ${lib.theme.nord7}
+			color14 ${lib.theme.nord7}
 
 			# white
-			color7  ${nord5}
-			color15 ${nord4}
+			color7  ${lib.theme.nord5}
+			color15 ${lib.theme.nord4}
 		'';
 	};
 }
