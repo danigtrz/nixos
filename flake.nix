@@ -59,7 +59,8 @@
 
 					stylix.nixosModules.stylix
 					{
-						stylix.image = ./wallpapers/3_nap3_4k.jpg;
+                        stylix.image = ./wallpapers/3_nap3_4k.jpg;
+                        stylix.polarity = "dark";
 					}
 				];
 			};
