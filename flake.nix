@@ -59,7 +59,7 @@
 
 					stylix.nixosModules.stylix
 					{
-						stylix.image = /home/rafa/Pictures/wlop/2019/3_nap3_4k.jpg;
+						stylix.image = ./wallpapers/3_nap3_4k.jpg;
 					}
 				];
 			};
