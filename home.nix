@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 {
 	imports = [
@@ -61,10 +61,10 @@
 			name = "Papirus-Dark";
 			package = pkgs.papirus-icon-theme;
 		};
-		# font = {
-		# 	name = "Fira Code";
-		# 	size = 11;
-		# };
+		font = {
+			name = "DejaVu Sans";
+			size = 11;
+		};
 	};
 
 	home.stateVersion = "22.11";
