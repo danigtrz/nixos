@@ -14,12 +14,16 @@
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 
+		stylix = {
+			url = "github:danth/stylix";
+		};
+
 		nix-matlab = {
 			url = "gitlab:doronbehar/nix-matlab";
 		};
 	};
 
-	outputs = { self, nixpkgs, home-manager, hyprland, nix-matlab }:
+	outputs = { self, nixpkgs, home-manager, hyprland, stylix, nix-matlab }:
 	let
 		system = "x86_64-linux";
 		
@@ -31,6 +35,7 @@
 		flake-overlays = [
 			nix-matlab.overlay
 		];
+	
 	in {
 		nixosConfigurations = {
 			nixos = nixpkgs.lib.nixosSystem {
@@ -51,6 +56,11 @@
 						enable = true;
 						nvidiaPatches = true;
 					}; }
+
+					stylix.nixosModules.stylix
+					{
+						stylix.image = /home/rafa/Pictures/wlop/2019/3_nap3_4k.jpg;
+					}
 				];
 			};
 		};
