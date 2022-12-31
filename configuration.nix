@@ -144,7 +144,11 @@ flake-overlays:
 		# desktop utilities
 		hyprpaper
 		dunst
-		wofi
+        wofi
+
+        # multimedia
+        mpv
+        feh
 
 		# steam
 		steam-run
@@ -160,7 +164,6 @@ flake-overlays:
 		ranger
 
         # misc. applications
-        feh
 		libreoffice-fresh
 		lutris
 		discord
