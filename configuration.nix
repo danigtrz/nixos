@@ -159,7 +159,8 @@ flake-overlays:
 		neofetch
 		ranger
 
-		# misc. applications
+        # misc. applications
+        feh
 		libreoffice-fresh
 		lutris
 		discord
