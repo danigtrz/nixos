@@ -41,12 +41,6 @@ flake-overlays:
 		LC_TIME = "en_US.UTF-8";
 	};
 
-	# keymap in X11
-	services.xserver = {
-		layout = "us";
-		xkbVariant = "altgr-intl";
-	};
-
 	# user
 	users.users.rafa = {
 		isNormalUser = true;
@@ -199,6 +193,7 @@ flake-overlays:
 		fira-code
 		fira-code-symbols
 		dejavu_fonts
+		font-awesome
 	];
 
 	# cachix for hyprland
