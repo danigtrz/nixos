@@ -15,7 +15,7 @@ flake-overlays:
 	boot.loader.systemd-boot.enable = true;
 	boot.loader.efi.canTouchEfiVariables = true;
 	boot.loader.efi.efiSysMountPoint = "/boot/efi";
-	boot.loader.timeout = 0.5;
+	boot.loader.timeout = 1;
 
 	# hostname
 	networking.hostName = "nixos";
