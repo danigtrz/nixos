@@ -15,6 +15,7 @@ flake-overlays:
 	boot.loader.systemd-boot.enable = true;
 	boot.loader.efi.canTouchEfiVariables = true;
 	boot.loader.efi.efiSysMountPoint = "/boot/efi";
+	boot.loader.timeout = 0.5;
 
 	# hostname
 	networking.hostName = "nixos";
@@ -144,11 +145,11 @@ flake-overlays:
 		# desktop utilities
 		hyprpaper
 		dunst
-        wofi
+		wofi
 
-        # multimedia
-        mpv
-        feh
+		# multimedia
+		mpv
+		feh
 
 		# steam
 		steam-run
@@ -163,7 +164,7 @@ flake-overlays:
 		neofetch
 		ranger
 
-        # misc. applications
+		# misc. applications
 		libreoffice-fresh
 		lutris
 		discord
