@@ -211,6 +211,7 @@ flake-overlays:
 	xdg.portal = {
 		enable = true;
 		wlr.enable = true;
+		extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 	};
 
 	security.rtkit.enable = true;
@@ -228,9 +229,6 @@ flake-overlays:
 	# bluetooth
 	hardware.bluetooth.enable = true;
 	services.blueman.enable = true;
-
-	# flatpak
-	# services.flatpak.enable = true;
 
 	# openssh
 	# services.openssh.enable = true;
