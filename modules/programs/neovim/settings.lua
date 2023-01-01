@@ -21,6 +21,7 @@ opt.smartindent = true
 opt.autoindent = true
 opt.tabstop = 4
 opt.shiftwidth = 4
+opt.expandtab = false
 
 -- ui
 opt.termguicolors = true
