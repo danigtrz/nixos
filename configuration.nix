@@ -127,6 +127,7 @@ flake-overlays:
 		egl-wayland
 		wl-clipboard
 		wlr-randr
+		swaylock
 
 		# web
 		firefox
@@ -211,6 +212,9 @@ flake-overlays:
 	};
 
 	security.rtkit.enable = true;
+
+	# swaylock
+	security.pam.services.swaylock = {};
 
 	# sound
 	services.pipewire = {
