@@ -61,6 +61,11 @@
 			name = "Papirus-Dark";
 			package = pkgs.papirus-icon-theme;
 		};
+		cursorTheme = {
+			name = "Bibata-Modern-Ice";
+			package = pkgs.bibata-cursors;
+			size = 24;
+		};
 		font = {
 			name = "DejaVu Sans";
 			size = 11;
