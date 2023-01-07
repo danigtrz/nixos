@@ -88,6 +88,10 @@ flake-overlays:
 		git
 		killall
 		pciutils
+		grim
+		slurp
+		neofetch
+		ranger
 
 		# graphics command line utilities
 		glxinfo
@@ -154,10 +158,6 @@ flake-overlays:
 		spotify
 		spotifywm
 		spicetify-cli
-
-		# misc. command line applications
-		neofetch
-		ranger
 
 		# misc. applications
 		libreoffice-fresh
