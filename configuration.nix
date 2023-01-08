@@ -85,6 +85,7 @@ flake-overlays:
 		# command line utilities
 		vim
 		wget
+		wev
 		git
 		killall
 		pciutils
