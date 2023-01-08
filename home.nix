@@ -32,8 +32,9 @@
 		XDG_BIN_HOME = "\${HOME}/.local/bin";
 		XDG_DATA_HOME = "\${HOME}/.local/share";
 		NIXOS_CONFIG = "\${HOME}/.nixos";
+		GRIM_DEFAULT_DIR = "\${HOME}/Downloads";
 		PATH = [
-		"\${XDG_BIN_HOME}"
+			"\${XDG_BIN_HOME}"
 		];
 
 		# steam GE proton
