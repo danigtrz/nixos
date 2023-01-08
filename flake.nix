@@ -14,10 +14,6 @@
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 
-		# stylix = {
-		# 	url = "github:danth/stylix";
-		# };
-
 		nix-matlab = {
 			url = "gitlab:doronbehar/nix-matlab";
 		};
@@ -56,12 +52,6 @@
 						enable = true;
 						nvidiaPatches = true;
 					}; }
-
-					# stylix.nixosModules.stylix
-					# {
-                    #     stylix.image = ./wallpapers/3_nap3_4k.jpg;
-                    #     stylix.polarity = "dark";
-					# }
 				];
 			};
 		};
