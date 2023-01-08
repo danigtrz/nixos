@@ -151,6 +151,11 @@ flake-overlays:
 		mpv
 		feh
 
+		# music
+		mpd
+		ncmpcpp
+		playerctl
+
 		# steam
 		steam-run
 		(steam.override { withJava = true; })
