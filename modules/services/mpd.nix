@@ -11,5 +11,5 @@
 				name "PipeWire Sound Server"
 			}
 		'';
-	}
+	};
 }
