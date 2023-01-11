@@ -7,6 +7,9 @@
 		./modules/programs/kitty.nix
 		./modules/programs/vscode.nix
 		./modules/programs/zathura.nix
+
+		# services
+		./modules/services/mpd.nix
 	];
 
 	home.username = "rafa";

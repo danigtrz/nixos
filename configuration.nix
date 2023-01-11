@@ -87,8 +87,9 @@ flake-overlays:
 		wget
 		wev
 		git
-		killall
 		pciutils
+		killall
+		playerctl
 		grim
 		slurp
 		neofetch
@@ -132,7 +133,7 @@ flake-overlays:
 		egl-wayland
 		wl-clipboard
 		wlr-randr
-		swaylock
+		# swaylock
 
 		# web
 		firefox
@@ -150,11 +151,6 @@ flake-overlays:
 		# multimedia
 		mpv
 		feh
-
-		# music
-		mpd
-		ncmpcpp
-		playerctl
 
 		# steam
 		steam-run
@@ -221,7 +217,7 @@ flake-overlays:
 	security.rtkit.enable = true;
 
 	# swaylock
-	security.pam.services.swaylock = {};
+	# security.pam.services.swaylock = {};
 
 	# sound
 	services.pipewire = {
@@ -231,6 +227,11 @@ flake-overlays:
 		jack.enable = true;
 		pulse.enable = true;
 		wireplumber.enable = true;
+	};
+
+	# mpd user workaround
+	systemd.services.mpd.environment = {
+		XDG_RUNTIME_DIR = "/run/user/1000";
 	};
 
 	# bluetooth
