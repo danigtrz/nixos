@@ -3,13 +3,15 @@
 {
 	imports = [
 		# programs
+		./modules/programs/fish.nix
 		./modules/programs/neovim/neovim.nix
 		./modules/programs/kitty.nix
 		./modules/programs/vscode.nix
 		./modules/programs/zathura.nix
+		./modules/programs/ncmpcpp.nix
 
 		# services
-		./modules/services/mpd.nix
+		# ./modules/services/mpd.nix
 	];
 
 	home.username = "rafa";
@@ -30,13 +32,13 @@
 		NIXOS_OZONE_WL = "1";
 		XDG_CURRENT_DESKTOP = "Hyprland";
 		XDG_SESSION_DESKTOP = "Hyprland";
-		XDG_CACHE_HOME = "\${HOME}/.cache";
-		XDG_CONFIG_HOME = "\${HOME}/.config";
-		XDG_BIN_HOME = "\${HOME}/.local/bin";
-		XDG_DATA_HOME = "\${HOME}/.local/share";
-		NIXOS_CONFIG = "\${HOME}/.nixos";
-		GRIM_DEFAULT_DIR = "\${HOME}/Downloads";
-		# PATH = [ "\${XDG_BIN_HOME}" ];
+		XDG_CACHE_HOME = "/home/rafa/.cache";
+		XDG_CONFIG_HOME = "/home/rafa/.config";
+		XDG_BIN_HOME = "/home/rafa/.local/bin";
+		XDG_DATA_HOME = "/home/rafa/.local/share";
+		NIXOS_CONFIG = "/home/rafa/.nixos";
+		GRIM_DEFAULT_DIR = "/home/rafa/Downloads";
+		# PATH = [ "${XDG_BIN_HOME}" ];
 
 		# steam GE proton
 		STEAM_EXTRA_COMPAT_TOOLS_PATHS = "\${HOME}/.steam/root/compatibilitytools.d";

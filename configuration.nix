@@ -9,6 +9,9 @@ flake-overlays:
 
 		# waybar
 		./modules/programs/waybar/waybar.nix
+
+		# mpd
+		./modules/services/mpd.nix
 	]; 
 
 	# bootloader
@@ -69,15 +72,10 @@ flake-overlays:
 	};
 	hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
 
-	# zsh
-	programs.zsh = {
-		enable = true;
-		shellAliases = {
-			re = "sudo nixos-rebuild switch --flake .#"; 
-		};
-	};
-	users.defaultUserShell = pkgs.zsh;
-	environment.shells = with pkgs; [ zsh ];
+	# fish
+	programs.fish.enable = true;
+	users.defaultUserShell = pkgs.fish;
+	environment.shells = with pkgs; [ fish ];
 
 	# packages
 	environment.systemPackages = with pkgs; [
@@ -162,6 +160,7 @@ flake-overlays:
 		spicetify-cli
 
 		# misc. applications
+		networkmanagerapplet
 		libreoffice-fresh
 		lutris
 		discord
@@ -208,6 +207,7 @@ flake-overlays:
 	# matlab (I think?)
 	nixpkgs.overlays = flake-overlays;
 
+	# xdg portals
 	xdg.portal = {
 		enable = true;
 		wlr.enable = true;
@@ -230,9 +230,8 @@ flake-overlays:
 	};
 
 	# mpd user workaround
-	systemd.services.mpd.environment = {
-		XDG_RUNTIME_DIR = "/run/user/1000";
-	};
+	# services.mpd.user = "rafa";
+	# systemd.services.mpd.environment = { XDG_RUNTIME_DIR = "/run/user/1000"; };
 
 	# bluetooth
 	hardware.bluetooth.enable = true;
