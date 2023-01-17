@@ -3,10 +3,10 @@
 {
 	programs.fish = {
 		enable = true;
-		shellAliases = {
-			r = "ranger";
-			re = "sudo nixos-rebuild switch --flake '.#'";
-		};
+		# shellAliases = {
+		# 	r = "ranger";
+		# 	re = "sudo nixos-rebuild switch --flake '.#'";
+		# };
 		plugins = with pkgs.fishPlugins; [
 			hydro
 		];
