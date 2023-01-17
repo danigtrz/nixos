@@ -90,6 +90,7 @@ flake-overlays:
 		playerctl
 		grim
 		slurp
+		pdftk
 		neofetch
 		ranger
 
