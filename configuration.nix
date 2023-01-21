@@ -115,6 +115,11 @@ flake-overlays:
 		zip
 		unzip
 
+		# power management
+		tlp
+		powertop
+		thermald
+
 		# sound
 		pipewire
 		wireplumber
