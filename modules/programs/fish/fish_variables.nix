@@ -1,0 +1,3 @@
+''
+SETUVAR fish_greeting:
+''
