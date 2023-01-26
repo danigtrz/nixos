@@ -1,3 +1,2 @@
 ''
-SETUVAR fish_greeting:
 ''
