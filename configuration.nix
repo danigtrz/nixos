@@ -73,9 +73,14 @@ flake-overlays:
 	hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
 
 	# fish
-	programs.fish.enable = true;
-	users.defaultUserShell = pkgs.fish;
-	environment.shells = with pkgs; [ fish ];
+	# programs.fish.enable = true;
+	# users.defaultUserShell = pkgs.fish;
+	# environment.shells = with pkgs; [ fish ];
+
+	# zsh
+	programs.zsh.enable = true;
+	users.defaultUserShell = pkgs.zsh;
+	environment.shells = with pkgs; [ zsh ];
 
 	# packages
 	environment.systemPackages = with pkgs; [
