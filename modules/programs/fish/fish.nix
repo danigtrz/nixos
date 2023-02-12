@@ -2,7 +2,7 @@
 
 {
 	programs.fish = {
-		enable = true;
+		enable = false;
 		# shellAliases = {
 		# 	r = "ranger";
 		# 	re = "sudo nixos-rebuild switch --flake '.#'";

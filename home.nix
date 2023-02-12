@@ -3,7 +3,8 @@
 {
 	imports = [
 		# programs
-		./modules/programs/fish/fish.nix
+		./modules/programs/zsh.nix
+		./modules/programs/starship.nix
 		./modules/programs/neovim/neovim.nix
 		./modules/programs/kitty.nix
 		./modules/programs/vscode.nix
