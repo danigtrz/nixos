@@ -45,7 +45,7 @@
 				"layer" = "top";
 				"spacing" = 56;
 				"modules-left" = [
-					"wlr/workspaces"
+					"hyprland/workspaces"
 				];
 				"modules-center" = [
 					"custom/music"
@@ -62,7 +62,7 @@
 					"format-icons" = "";
 					"on-click" = "wofi --show drun";
 				};
-				"wlr/workspaces" = {
+				"hyprland/workspaces" = {
 					"on-click" = "activate";
 				};
 				"custom/music" = {

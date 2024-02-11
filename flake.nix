@@ -18,11 +18,10 @@
 			url = "gitlab:doronbehar/nix-matlab";
 		};
 
-		aagl.url = "github:ezKEa/aagl-gtk-on-nix";
-		aagl.inputs.nixpkgs.follows = "nixpkgs";
+		# ags.url = "github:Aylur/ags";
 	};
 
-	outputs = { self, nixpkgs, home-manager, hyprland, nix-matlab, aagl }:
+	outputs = { self, nixpkgs, home-manager, hyprland, nix-matlab }:
 	let
 		system = "x86_64-linux";
 		
@@ -53,16 +52,7 @@
 					hyprland.nixosModules.default
 					{ programs.hyprland = {
 						enable = true;
-						enableNvidiaPatches = true;
 					}; }
-
-					{
-						imports = [ aagl.nixosModules.default ];
-						nix.settings = aagl.nixConfig; # set up cachix
-						programs.anime-game-launcher.enable = true; # adds launcher and /etc/hosts rules
-						programs.honkers-railway-launcher.enable = true;
-						programs.honkers-launcher.enable = true;
-					}
 				];
 			};
 		};

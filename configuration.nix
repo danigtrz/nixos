@@ -87,23 +87,29 @@ flake-overlays:
 		driSupport32Bit = true;
 	};
 	hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
-
-	# external display
-	# specialisation = {
-	# 	external-display.configuration = {
-	# 		system.nixos.tags = [ "external-display" ];
-	# 		hardware.nvidia.prime.offload.enable = lib.mkForce false;
-	# 		hardware.nvidia.powerManagement.enable = lib.mkForce false;
-	# 	};
-	# };
-
-	# display manager
-	# services.xserver.displayManager.sddm.enable = true;
-
-	# KDE
+	
+	# gnome
 	# services.xserver.enable = true;
-	# services.xserver.displayManager.sddm.enable = true;
-	# services.xserver.desktopManager.plasma5.enable = true;
+	# services.xserver.displayManager.gdm.enable = true;
+	# services.xserver.desktopManager.gnome.enable = true;
+	# services.udev.packages = with pkgs; [ gnome.gnome-settings-daemon ];
+	# environment.gnome.excludePackages = (with pkgs; [
+	# # gnome-photos
+	# 	gnome-tour
+	# ]) ++ (with pkgs.gnome; [
+	# 	cheese # webcam tool
+	# 	gnome-music
+	# 	gnome-terminal
+	# 	epiphany # web browser
+	# 	geary # email reader
+	# 	evince # document viewer
+	# 	gnome-characters
+	# 	totem # video player
+	# 	tali # poker game
+	# 	iagno # go game
+	# 	hitori # sudoku game
+	# 	atomix # puzzle game
+	# ]);
 
 	# zsh
 	programs.zsh.enable = true;
@@ -145,12 +151,13 @@ flake-overlays:
 		jupyter
 		pandoc
 		texlive.combined.scheme-full
-		mathematica
+		# mathematica
 
 		# python packages
+		python311Packages.ebooklib
 		python310Packages.requests
 		python310Packages.beautifulsoup4
-		python310Packages.scrapy
+		# python310Packages.scrapy
 
 		# archival / compression
 		p7zip
@@ -199,6 +206,9 @@ flake-overlays:
 		dunst
 		wofi
 
+		# gnome extensions
+		# gnomeExtensions.appindicator
+
 		# multimedia
 		mpv
 		vlc
@@ -215,8 +225,8 @@ flake-overlays:
 
 		# misc. applications
 		networkmanagerapplet
-		protonvpn-gui
-		protonvpn-cli
+		# protonvpn-gui
+		# protonvpn-cli
 		libreoffice-fresh
 		bitwig-studio
 		qbittorrent
@@ -224,7 +234,7 @@ flake-overlays:
 		discord
 		calibre
 		anki
-		baobab
+		# baobab
 		# piper
 		# libratbag
 	];
@@ -261,17 +271,17 @@ flake-overlays:
 	];
 
 	# input
-	i18n.inputMethod = {
-		enabled = "fcitx5";
-		fcitx5.addons = with pkgs; [
-			fcitx5-gtk
-			fcitx5-rime
-			fcitx5-chinese-addons
-			fcitx5-table-extra
-			# fcitx5-pinyin-moegirl
-			# fcitx5-pinyin-zhwiki
-		];
-	};
+	# i18n.inputMethod = {
+	# 	enabled = "fcitx5";
+	# 	fcitx5.addons = with pkgs; [
+	# 		fcitx5-gtk
+	# 		fcitx5-rime
+	# 		fcitx5-chinese-addons
+	# 		fcitx5-table-extra
+	# 		# fcitx5-pinyin-moegirl
+	# 		# fcitx5-pinyin-zhwiki
+	# 	];
+	# };
 
 	# thunar extras
 	programs.thunar.plugins = with pkgs.xfce; [
@@ -293,13 +303,13 @@ flake-overlays:
 	};
 
 	# swaylock
-	security.pam.services.swaylock = {};
+	# security.pam.services.swaylock = {};
 
 	# xdg portals
 	xdg.portal = {
 		enable = true;
 		# wlr.enable = true;
-		extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+		# extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 	};
 
 	security.rtkit.enable = true;
@@ -332,14 +342,15 @@ flake-overlays:
 		pulse.enable = true;
 		wireplumber.enable = true;
 	};
+	hardware.pulseaudio.enable = false;
 
 	# mpd user workaround
 	# services.mpd.user = "rafa";
 	# systemd.services.mpd.environment = { XDG_RUNTIME_DIR = "/run/user/1000"; };
 
 	# bluetooth
-	hardware.bluetooth.enable = true;
-	services.blueman.enable = true;
+	# hardware.bluetooth.enable = true;
+	# services.blueman.enable = true;
 
 	# openssh
 	# services.openssh.enable = true;
