@@ -6,7 +6,7 @@ in
 {
 	imports = [
 		# ./ags.nix
-		./browser.nix
+		./firefox.nix
 		# ./dconf.nix
 		# ./git.nix
 		./hyprland.nix
