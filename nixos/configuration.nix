@@ -1,6 +1,6 @@
 flake-overlays:
 
-{ pkgs, username, hostname, ... }:
+{ pkgs, config, options, lib, username, hostname, ... }:
 
 {
 	imports = [
@@ -66,6 +66,11 @@ flake-overlays:
 		isNormalUser = true;
 		extraGroups = [ "networkmanager" "wheel" "video" "audio" ];
 	};
+
+	# shell
+	programs.zsh.enable = true;
+	users.defaultUserShell = pkgs.zsh;
+	environment.shells = with pkgs; [ zsh ];
 
 	# kdeconnect
 	networking.firewall = rec {
