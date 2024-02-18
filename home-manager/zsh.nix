@@ -6,10 +6,8 @@
 		shellAliases = {
 			update = "sudo nixos-rebuild switch --flake '.#'";
 		};
-		history = {
-			size = 10000;
-			path = "~/.histfile";
-		};
+		histSize = 10000;
+		histFile = "~/.histfile";
 		enableCompletion = true;
 		enableAutosuggestions = true;
 		syntaxHighlighting.enable = true;
