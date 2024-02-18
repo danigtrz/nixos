@@ -4,7 +4,7 @@ flake-overlays:
 
 {
 	imports = [
-		/etc/nixos/hardware-configuration.nix
+		./hardware-configuration.nix
 		./audio.nix
 		./hyprland.nix
 		./laptop.nix
