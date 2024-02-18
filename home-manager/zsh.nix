@@ -9,8 +9,8 @@
 		};
 		histSize = 10000;
 		histFile = "~/.histfile";
-		# enableCompletion = true;
-		# enableAutosuggestions = true;
+		enableCompletion = true;
+		enableAutosuggestions = true;
 		# syntaxHighlighting.enable = true;
 		# plugins = [
 		# 	{
