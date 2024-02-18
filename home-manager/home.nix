@@ -5,9 +5,9 @@ let
 in
 {
 	imports = [
-		# ./ags.nix
-		./firefox.nix
+		./ags.nix
 		# ./dconf.nix
+		./firefox.nix
 		# ./git.nix
 		./hyprland.nix
 		./kitty.nix
@@ -42,15 +42,6 @@ in
 			"$HOME/.local/bin"
 		];
 	};
-
-	gtk.gtk3.bookmarks = [
-		"file://${homeDirectory}/Documents"
-		"file://${homeDirectory}/Music"
-		"file://${homeDirectory}/Pictures"
-		"file://${homeDirectory}/Videos"
-		"file://${homeDirectory}/Downloads"
-		"file://${homeDirectory}/Desktop"
-	];
 
 	gtk = {
 		enable = true;
