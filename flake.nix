@@ -21,11 +21,11 @@
 		};
 	};
 
-	outputs = { nixpkgs, home-manager, ... }@inputs:
+	outputs = { nixpkgs, home-manager, hyprland, ags, nix-matlab, ... }@inputs:
 
 	let
-		user = "rafa";
-		hostname = "nixos"
+		username = "rafa";
+		hostname = "nixos";
 		system = "x86_64-linux";
 		
 		pkgs = import nixpkgs {
@@ -54,17 +54,17 @@
 				# 	};
 				# }
 
-				hyprland.nixosModules.default
-				{ programs.hyprland = {
-					enable = true;
-				}; }
+				# hyprland.nixosModules.default
+				# { programs.hyprland = {
+				# 	enable = true;
+				# }; }
 			];
+		};
 
-			homeConfigurations.${username} = home-manager.lib.homeManagerConfiguration {
-				inherit pkgs;
-				extraSpecialArgs = { inherit inputs username; };
-				modules = [ ./home-manager/home.nix ];
-			};
+		homeConfigurations.${username} = home-manager.lib.homeManagerConfiguration {
+			inherit pkgs;
+			extraSpecialArgs = { inherit inputs username; };
+			modules = [ ./home-manager/home.nix ];
 		};
 	};
 }
