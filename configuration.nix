@@ -5,7 +5,7 @@ flake-overlays:
 {
 	imports = [
 		# hardware
-		./hardware-configuration.nix
+		/etc/nixos/hardware-configuration.nix
 
 		# waybar
 		./modules/programs/waybar/waybar.nix
