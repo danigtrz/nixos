@@ -125,7 +125,7 @@ in
 
 				"SUPER, Return, exec, kitty"
 
-				", Print, exec, grim -g "$(slurp)""
+				#", Print, exec, grim -g "$(slurp)""
 
 				"SUPER, left, movefocus, l"
 				"SUPER, right, movefocus, r"

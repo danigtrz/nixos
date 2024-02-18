@@ -3,13 +3,13 @@
 {
 	programs.zsh = {
 		enable = true;
-		dotDir = "~/.config/zsh";
+		dotDir = ".config/zsh";
 		shellAliases = {
 			update = "sudo nixos-rebuild switch --flake '.#'";
 		};
-		histSize = 10000;
-		histFile = "~/.histfile";
-		enableCompletion = true;
+		#histSize = 10000;
+		#histFile = "~/.histfile";
+		#enableCompletion = true;
 		enableAutosuggestions = true;
 		# syntaxHighlighting.enable = true;
 		# plugins = [

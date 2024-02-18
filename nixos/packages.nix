@@ -81,7 +81,6 @@
 		gimp
 
 		# desktop utilities
-		kitty
 		hyprpaper
 		dunst
 		wofi

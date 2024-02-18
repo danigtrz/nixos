@@ -46,13 +46,14 @@
 			modules = [
 				(import ./nixos/configuration.nix flake-overlays)
 
-				# home-manager.nixosModules.home-manager {
-				# 	home-manager.useGlobalPkgs = true;
-				# 	home-manager.useUserPackages = true;
-				# 	home-manager.users.rafa = {
-				# 		imports = [ ./home.nix ];
-				# 	};
-				# }
+				home-manager.nixosModules.home-manager {
+					home-manager.useGlobalPkgs = true;
+					home-manager.useUserPackages = true;
+					home-manager.users.${username} = {
+						imports = [ ./home-manager/home.nix ];
+					};
+					home-manager.extraSpecialArgs = { inherit inputs username; };
+				}
 
 				# hyprland.nixosModules.default
 				# { programs.hyprland = {
@@ -61,10 +62,10 @@
 			];
 		};
 
-		homeConfigurations.${username} = home-manager.lib.homeManagerConfiguration {
-			inherit pkgs;
-			extraSpecialArgs = { inherit inputs username; };
-			modules = [ ./home-manager/home.nix ];
-		};
+		# homeConfigurations.${username} = home-manager.lib.homeManagerConfiguration {
+		# 	inherit pkgs;
+		# 	extraSpecialArgs = { inherit inputs username; };
+		# 	modules = [ ./home-manager/home.nix ];
+		# };
 	};
 }
