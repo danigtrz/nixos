@@ -82,7 +82,7 @@
 
 		# desktop utilities
 		hyprpaper
-		dunst
+		# dunst
 		wofi
 
 		# multimedia
