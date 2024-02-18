@@ -3,7 +3,7 @@
 {
 	programs.zsh = {
 		enable = true;
-		dotDir = ".config/zsh";
+		dotDir = "~/.config/zsh";
 		shellAliases = {
 			update = "sudo nixos-rebuild switch --flake '.#'";
 		};
