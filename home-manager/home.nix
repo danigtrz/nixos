@@ -12,6 +12,7 @@ in
 		./hyprland.nix
 		./kitty.nix
 		./neovim.nix
+		./packages.nix
 		./starship.nix
 		./vscode.nix
 		./zsh.nix
