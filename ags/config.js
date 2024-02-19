@@ -1,16 +1,29 @@
+import GLib from "gi://GLib"
+
 const hyprland = await Service.import('hyprland');
-const notifications = await Service.import('notifications');
 const mpris = await Service.import('mpris');
 const audio = await Service.import('audio');
 const battery = await Service.import('battery');
+// const notifications = await Service.import('notifications');
 
-const date = Variable('', {
-	poll: [1000, 'date "+%c"']
+const datetime = Variable(GLib.DateTime.new_now_local(), {
+	poll: [1000, () => GLib.DateTime.new_now_local()]
+})
+
+const date_format = Variable('%A, %B %e');
+const date = Utils.derive([datetime, date_format], (c, f) => c.format(f))
+
+const time_format = Variable('%H:%M');
+const time = Utils.derive([datetime, time_format], (c, f) => c.format(f))
+
+const calendar = () => Widget.Label({
+	class_name: 'calendar',
+	label: date.bind()
 })
 
 const clock = () => Widget.Label({
 	class_name: 'clock',
-	label: date.bind()
+	label: time.bind()
 })
 
 const volume = () => Widget.Box({
@@ -61,6 +74,13 @@ const media = () => Widget.Button({
 	}, 'player-changed')
 })
 
+const player = () => Widget.Box({
+	class_name: 'player',
+	children: [
+		media()
+	]
+})
+
 const left = () => Widget.Box({
 	children: [
 		workspace_list()
@@ -69,16 +89,16 @@ const left = () => Widget.Box({
 
 const center = () => Widget.Box({
 	children: [
-		media()
+		player()
 	]
 })
 
 const right = () => Widget.Box({
 	hpack: 'end',
-	spacing: 8,
 	children: [
 		volume(),
 		battery_label(),
+		calendar(),
 		clock()
 	]
 })
@@ -88,6 +108,7 @@ const bar = (monitor = 0) => Widget.Window({
 	class_name: 'bar',
 	monitor: monitor,
 	anchor: ['top', 'left', 'right'],
+	margins: [0, 6],
 	exclusivity: 'exclusive',
 	child: Widget.CenterBox({
 		start_widget: left(),
@@ -97,6 +118,7 @@ const bar = (monitor = 0) => Widget.Window({
 })
 
 export default {
+	style: './style.css',
 	windows: [
 		bar()
 	]

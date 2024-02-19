@@ -38,18 +38,19 @@ in
 			exec-once = [
 				# "ags -b hypr"
 				"hyprctl setcursor Bibata-Modern-Ice 24"
-				# "transmission-gtk"
 			];
 
 			monitor = [
-				",preferred,auto,auto"
+				"eDP-1,1920x1080@144,0x0,1"
+				# "eDP-1,addreserved,-4,0,0,0"
+				",preferred,auto,1"
 			];
 
 			general = {
 				layout = "dwindle";
 
 				gaps_in = 6;
-				gaps_out = 16;
+				gaps_out = 12;
 				border_size = 2;
 				
 				"col.active_border" = "rgba(cba6f7ee) rgba(f5c2e7ee) 45deg";
