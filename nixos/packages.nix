@@ -70,7 +70,6 @@
 		wl-clipboard
 		wlr-randr
 
-
 		# file manager
 		xfce.thunar
 		gnome.file-roller
@@ -81,7 +80,7 @@
 		gimp
 
 		# desktop utilities
-		hyprpaper
+		# hyprpaper
 		# dunst
 		wofi
 
@@ -114,8 +113,10 @@
 		# libratbag
 	];
 
+	# backlight
 	programs.light.enable = true;
 
+	# fonts
 	fonts.packages = with pkgs; [
 		(nerdfonts.override { fonts = [ "FiraCode" ]; })
 		noto-fonts
@@ -128,6 +129,7 @@
 		font-awesome
 	];
 
+	# thunar
 	programs.thunar.plugins = with pkgs.xfce; [
 		thunar-volman
 		thunar-archive-plugin
@@ -135,11 +137,11 @@
 	];
 	services.tumbler.enable = true;
 
+	# steam
 	programs.steam = {
 		enable = true;
 		remotePlay.openFirewall = true;
 		dedicatedServer.openFirewall = true;
 	};
-
 	programs.java.enable = true;
 }
