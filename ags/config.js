@@ -10,7 +10,7 @@ const datetime = Variable(GLib.DateTime.new_now_local(), {
 	poll: [1000, () => GLib.DateTime.new_now_local()]
 })
 
-const date_format = Variable('%A, %B %e');
+const date_format = Variable('%Y年%m月%d日');
 const date = Utils.derive([datetime, date_format], (c, f) => c.format(f))
 
 const time_format = Variable('%H:%M');
@@ -28,17 +28,22 @@ const clock = () => Widget.Label({
 
 const volume = () => Widget.Box({
 	class_name: 'volume',
+	spacing: 8,
 	children: [
-		Widget.Icon('audio-volume-high'),
+		Widget.Icon().hook(audio.speaker, self => {
+			const icon = audio.speaker.volume > 1 ? 'overamplified' : 'high';
+			self.icon = audio.speaker.stream.isMuted ? 'audio-volume-muted' : `audio-volume-${icon}`;
+		}),
 		Widget.ProgressBar({
 			vpack: 'center',
-			fraction: audio.speaker.volume
+			fraction: audio.speaker.bind('volume')
 		})
 	]
 })
 
 const battery_label = () => Widget.Box({
 	class_name: 'battery',
+	spacing: 8,
 	children: [
 		Widget.Icon('battery'),
 		Widget.ProgressBar({
@@ -48,37 +53,62 @@ const battery_label = () => Widget.Box({
 	]
 })
 
+const ar_zh = {
+	1: '一',
+	2: '二',
+	3: '三',
+	4: '四',
+	5: '五',
+	6: '六',
+	7: '七',
+	8: '八',
+	9: '九',
+	10: '十',
+	11: '十一',
+	12: '十二',
+}
+
 function workspace_list() {
 	const workspaces = hyprland.bind('workspaces')
 	const active_id = hyprland.active.workspace.bind('id')
 	return Widget.Box({
 		class_name: 'workspaces',
-		children: workspaces.as(ws => ws.map(({ id }) => Widget.Button({
-			on_clicked: () => hyprland.messageAsync(`dispatch workspace ${id}`),
-			child: Widget.Label(`${id}`),
-			class_name: active_id.as(i => `${i === id ? 'focused' : ''}`)
-		})))
+		spacing: 12,
+		children: Array.from({ length: 12 }, (_, i) => i + 1).map(i => Widget.Button({
+			onClicked: () => hyprland.messageAsync(`dispatch workspace ${i}`),
+			attribute: i,
+			label: ar_zh[i],
+			class_name: active_id.as(j => `${j === i ? 'focused' : ''}`)
+		})),
+		// children: workspaces.as(ws => ws.map(({ id }) => Widget.Button({
+		//     on_clicked: () => hyprland.messageAsync(`dispatch workspace ${id}`),
+		//     child: Widget.Label(ar_zh[id]),
+		//     class_name: active_id.as(i => `${i === id ? 'focused' : ''}`),
+		// })))
+		setup: self => self.hook(hyprland, () => self.children.forEach(btn => {
+			btn.visible = hyprland.workspaces.some(ws => ws.id === btn.attribute);
+		}))
 	})
 }
-
-const media = () => Widget.Button({
-	class_name: 'media',
-	on_primary_click: () => mpris.getPlayer('')?.playPause(),
-	child: Widget.Label('-').hook(mpris, self => {
-		if (mpris.players[0]) {
-			const { track_artists, track_title } = mpris.players[0]
-			self.label = `${track_artists.join(', ')} - ${track_title}`
-		} else {
-			self.label = ''
-		}
-	}, 'player-changed')
-})
 
 const player = () => Widget.Box({
 	class_name: 'player',
 	children: [
-		media()
-	]
+		Widget.Button({
+			on_primary_click: () => mpris.getPlayer('')?.playPause(),
+			child: Widget.Label('-').hook(mpris, self => {
+				if (mpris.players[0]) {
+					const { track_artists, track_title } = mpris.players[0]
+					self.label = `${track_artists.join(', ')} - ${track_title}`
+				} else {
+					self.label = ''
+				}
+			}, 'player-changed')
+		})
+	],
+	setup: self => self.hook(mpris, () => {
+		self.visible = mpris.players[0] ? true : false;
+	}, 'changed')
 })
 
 const left = () => Widget.Box({
@@ -110,6 +140,7 @@ const bar = (monitor = 0) => Widget.Window({
 	anchor: ['top', 'left', 'right'],
 	margins: [0, 6],
 	exclusivity: 'exclusive',
+	layer: 'bottom',
 	child: Widget.CenterBox({
 		start_widget: left(),
 		center_widget: center(),
