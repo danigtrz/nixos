@@ -53,8 +53,6 @@
 		thermald
 
 		# sound
-		pipewire
-		wireplumber
 		alsa-lib
 		alsa-utils
 		flac
@@ -69,6 +67,8 @@
 		egl-wayland
 		wl-clipboard
 		wlr-randr
+		swww
+		wofi
 
 		# file manager
 		xfce.thunar
@@ -78,11 +78,6 @@
 		inkscape
 		krita
 		gimp
-
-		# desktop utilities
-		# hyprpaper
-		# dunst
-		wofi
 
 		# multimedia
 		mpv
