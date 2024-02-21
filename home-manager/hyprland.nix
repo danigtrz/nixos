@@ -36,13 +36,12 @@ in
 
 		settings = {
 			exec-once = [
-				# "ags -b hypr"
+				"ags -b hypr"
 				"hyprctl setcursor Bibata-Modern-Ice 24"
 			];
 
 			monitor = [
 				"eDP-1,1920x1080@144,0x0,1"
-				# "eDP-1,addreserved,-4,0,0,0"
 				",preferred,auto,1"
 			];
 
@@ -86,10 +85,10 @@ in
 
 			decoration = {
 				rounding = 8;
-				drop_shadow = "yes";
-				shadow_range = 4;
-				shadow_render_power = 3;
-				"col.shadow" = "rgba(1a1a1aee)";
+				drop_shadow = "no";
+				# shadow_range = 4;
+				# shadow_render_power = 3;
+				# "col.shadow" = "rgba(1a1a1aee)";
 			};
 
 			animations = {
