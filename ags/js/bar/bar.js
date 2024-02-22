@@ -11,7 +11,7 @@ const left = () => Widget.Box({
 		launcher(),
 		workspaces()
 	]
-})
+});
 
 const center = () => Widget.Box({
 	children: [
