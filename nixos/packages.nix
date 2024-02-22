@@ -113,15 +113,15 @@
 
 	# fonts
 	fonts.packages = with pkgs; [
-		(nerdfonts.override { fonts = [ "FiraCode" ]; })
+		roboto
+		fira-code
+		fira-code-symbols
 		noto-fonts
-		noto-fonts-cjk-sans
-		noto-fonts-cjk-serif
+		noto-fonts-cjk
 		noto-fonts-emoji
 		noto-fonts-extra
 		liberation_ttf
 		dejavu_fonts
-		font-awesome
 	];
 
 	# thunar
@@ -139,4 +139,13 @@
 		dedicatedServer.openFirewall = true;
 	};
 	programs.java.enable = true;
+
+	# fcitx5
+	i18n.inputMethod = {
+		enabled = "fcitx5";
+		fcitx5.addons = with pkgs; [
+			fcitx5-gtk
+			fcitx5-chinese-addons
+		];
+	};
 }
