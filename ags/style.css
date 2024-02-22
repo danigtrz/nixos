@@ -3,11 +3,21 @@ window.bar {
 	color: whitesmoke;
 }
 
-.workspaces, .player, .volume, .battery, .calendar, .clock {
+.launcher,
+.workspaces,
+.player,
+.volume,
+.battery,
+.calendar,
+.clock {
 	background-color: rgb(30, 30, 46);
 	border-radius: 8px;
 	margin: 12px 6px 0px;
 	padding: 4px 10px;
+}
+
+.launcher button {
+	all: unset;
 }
 
 .player button {
