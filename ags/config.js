@@ -3,8 +3,9 @@ import GLib from "gi://GLib"
 const hyprland = await Service.import('hyprland');
 const mpris = await Service.import('mpris');
 const audio = await Service.import('audio');
-const battery = await Service.import('battery');
 // const notifications = await Service.import('notifications');
+
+import battery from './js/battery.js';
 
 const datetime = Variable(GLib.DateTime.new_now_local(), {
 	poll: [1000, () => GLib.DateTime.new_now_local()]
@@ -41,14 +42,12 @@ const volume = () => Widget.Box({
 	]
 })
 
-const battery_label = () => Widget.Box({
-	class_name: 'battery',
-	spacing: 8,
+const launcher = () => Widget.Box({
+	class_name: 'launcher',
 	children: [
-		Widget.Icon('battery'),
-		Widget.ProgressBar({
-			vpack: 'center',
-			fraction: battery.bind('percent').as(p => p > 0 ? p / 100 : 0)
+		Widget.Button({
+			child: Widget.Icon('audio-volume-high'),
+			// on_primary_click: () => 
 		})
 	]
 })
@@ -68,8 +67,7 @@ const ar_zh = {
 	12: '十二',
 }
 
-function workspace_list() {
-	const workspaces = hyprland.bind('workspaces')
+function workspaces() {
 	const active_id = hyprland.active.workspace.bind('id')
 	return Widget.Box({
 		class_name: 'workspaces',
@@ -80,11 +78,6 @@ function workspace_list() {
 			label: ar_zh[i],
 			class_name: active_id.as(j => `${j === i ? 'focused' : ''}`)
 		})),
-		// children: workspaces.as(ws => ws.map(({ id }) => Widget.Button({
-		//     on_clicked: () => hyprland.messageAsync(`dispatch workspace ${id}`),
-		//     child: Widget.Label(ar_zh[id]),
-		//     class_name: active_id.as(i => `${i === id ? 'focused' : ''}`),
-		// })))
 		setup: self => self.hook(hyprland, () => self.children.forEach(btn => {
 			btn.visible = hyprland.workspaces.some(ws => ws.id === btn.attribute);
 		}))
@@ -113,7 +106,8 @@ const player = () => Widget.Box({
 
 const left = () => Widget.Box({
 	children: [
-		workspace_list()
+		launcher(),
+		workspaces()
 	]
 })
 
@@ -127,7 +121,7 @@ const right = () => Widget.Box({
 	hpack: 'end',
 	children: [
 		volume(),
-		battery_label(),
+		battery(),
 		calendar(),
 		clock()
 	]
