@@ -37,6 +37,8 @@ in
 		settings = {
 			exec-once = [
 				"ags -b hypr"
+				"swww init"
+				"fcitx5"
 				"hyprctl setcursor Bibata-Modern-Ice 24"
 			];
 
