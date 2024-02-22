@@ -1,4 +1,4 @@
-import launcher from './parts/launcher.js';
+// import launcher from './parts/launcher.js';
 import workspaces from './parts/workspaces.js';
 import player from './parts/player.js';
 import volume from './parts/volume.js';
@@ -8,7 +8,7 @@ import clock from './parts/clock.js';
 
 const left = () => Widget.Box({
 	children: [
-		launcher(),
+		// launcher(),
 		workspaces()
 	]
 });
