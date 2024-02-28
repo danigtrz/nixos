@@ -35,7 +35,6 @@
 		jupyter
 		pandoc
 		texlive.combined.scheme-full
-		# mathematica
 
 		# python packages
 		# python311Packages.ebooklib
@@ -74,11 +73,6 @@
 		xfce.thunar
 		gnome.file-roller
 
-		# image applications
-		inkscape
-		krita
-		gimp
-
 		# multimedia
 		mpv
 		vlc
@@ -87,11 +81,6 @@
 		# steam
 		steam-run
 		# (steam.override { withJava = true; })
-
-		# spotify
-		spotify
-		spotifywm
-		spicetify-cli
 
 		# misc. applications
 		networkmanagerapplet
