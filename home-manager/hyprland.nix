@@ -69,10 +69,9 @@ in
 				
 				touchpad = {
 					natural_scroll = "yes";
+					scroll_factor = 0.8;
 					clickfinger_behavior = true;
 				};
-
-				sensitivity = 0;
 			};
 
 			dwindle = {
