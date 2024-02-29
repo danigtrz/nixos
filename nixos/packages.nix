@@ -35,6 +35,7 @@
 		jupyter
 		pandoc
 		texlive.combined.scheme-full
+		mathematica
 
 		# python packages
 		# python311Packages.ebooklib
@@ -77,6 +78,16 @@
 		mpv
 		vlc
 		feh
+
+		# images
+		inkscape
+		krita
+		gimp
+
+		# music
+		spotify
+		spotifywm
+		spicetify-cli
 
 		# steam
 		steam-run
