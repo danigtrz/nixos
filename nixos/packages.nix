@@ -102,7 +102,6 @@
 		qbittorrent
 		lutris
 		discord
-		calibre
 		# baobab
 		# piper
 		# libratbag
