@@ -1,5 +1,5 @@
-const launcher = () => Widget.Box({
-	class_name: 'launcher',
+const start = () => Widget.Box({
+	class_name: 'start',
 	children: [
 		Widget.Button({
 			child: Widget.Icon('nixos-white-symbolic'),
@@ -8,4 +8,4 @@ const launcher = () => Widget.Box({
 	]
 });
 
-export default launcher;
+export default start;
