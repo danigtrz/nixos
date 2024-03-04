@@ -32,7 +32,8 @@ const Applauncher = ({ width = 500, height = 500, spacing = 12 }) => {
 	// container holding buttons
 	const list = Widget.Box({
 		vertical: true,
-		children: applications
+		children: applications,
+		spacing
 	});
 
 	// repopulate box, so most used items are at the top
@@ -58,5 +59,48 @@ const Applauncher = ({ width = 500, height = 500, spacing = 12 }) => {
 		on_change: ({ text }) => applications.forEach(item => {
 			item.visible = item.attribute.app.match(text ?? '');
 		})
+	});
+
+	return Widget.Box({
+		vertical: true,
+		css: `margin: ${spacing * 2}px;`,
+		children: [
+			entry,
+
+			// wrap list in scrollable
+			Widget.Scrollable({
+				hscroll: 'never',
+				css: `
+					min-width: ${width}px;
+					min-height: ${height}px;
+				`,
+				child: list,
+			})
+		],
+		setup: self => self.hook(App, (_, windowName, visible) => {
+			if (windowName !== WINDOW_NAME)
+				return;
+
+			// when applauncher appears
+			if (visible) {
+				repopulate();
+				entry.text = '';
+				entry.grab_focus();
+			}
+		})
+	});
+};
+
+export const applauncher = Widget.Window({
+	name: WINDOW_NAME,
+	setup: self => self.keybind('Escape', () => {
+		App.closeWindow(WINDOW_NAME)
+	}),
+	visible: false,
+	keymode: 'exclusive',
+	child: Applauncher({
+		width: 500,
+		height: 500,
+		spacing: 12
 	})
-}
+});
