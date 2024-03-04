@@ -123,6 +123,7 @@ in
 				"SUPER SHIFT, M, exit,"
 
 				"SUPER, R, exec, wofi --show drun"
+				"SUPER, T, exec, ags -b hypr -t applauncher"
 
 				"SUPER, Return, exec, kitty"
 
