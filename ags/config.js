@@ -5,7 +5,7 @@ Gtk.IconTheme.get_default().append_search_path('./assets');
 import bar from './js/bar/bar.js';
 
 export default {
-	style: './css/style.css',
+	style: './style.css',
 	windows: [
 		bar()
 	]
