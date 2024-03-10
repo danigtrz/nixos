@@ -83,7 +83,6 @@
 		dedicatedServer.openFirewall = true;
 	};
 	programs.java.enable = true;
-	programs.steam.package = pkgs.steam.override { withJava = true; };
 
 	# fcitx5
 	i18n.inputMethod = {
