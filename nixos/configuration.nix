@@ -46,25 +46,16 @@ flake-overlays:
 		};
 	};
 
-	# network
-	networking = {
-		hostName = hostname;
-		networkmanager.enable = true;
-	};
-
-	# bluetooth
-	hardware.bluetooth = {
-		enable = true;
-		powerOnBoot = false;
-	};
-
-	# dconf
-	programs.dconf.enable = true;
-
 	# user
 	users.users.${username} = {
 		isNormalUser = true;
 		extraGroups = [ "networkmanager" "wheel" "video" "audio" ];
+	};
+
+	# network
+	networking = {
+		hostName = hostname;
+		networkmanager.enable = true;
 	};
 
 	# shell
@@ -72,10 +63,13 @@ flake-overlays:
 	users.defaultUserShell = pkgs.zsh;
 	environment.shells = with pkgs; [ zsh ];
 
-	# kdeconnect
-	networking.firewall = rec {
-		allowedTCPPortRanges = [{ from = 1714; to = 1764; }];
-		allowedUDPPortRanges = allowedTCPPortRanges;
+	# dconf
+	programs.dconf.enable = true;
+
+	# bluetooth
+	hardware.bluetooth = {
+		enable = true;
+		powerOnBoot = false;
 	};
 
 	system.stateVersion = "23.05";
