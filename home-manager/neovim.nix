@@ -8,8 +8,8 @@
 
 	programs.neovim = {
 		enable = true;
-		# viAlias = true;
-		# vimAlias = true;
+		viAlias = true;
+		vimAlias = true;
 
 		# withPython3 = true;
 
@@ -26,5 +26,5 @@
 		# ];
 	};
 
-	xdg.configFile.nvim.source = ../nvim;
+	# xdg.configFile.nvim.source = ../nvim;
 }
