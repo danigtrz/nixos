@@ -3,59 +3,37 @@
 {
 	environment.systemPackages = with pkgs; [
 
-		# command line utilities
-		vim
-		wget
-		wev
+		# utilities
 		git
-		pciutils
-		killall
-		playerctl
 		grim
-		slurp
+		pciutils
 		pdftk
+		psmisc
+		slurp
+		vulkan-tools
+		wev
+		wget
+
+		# archival/compression
+		unzip
+		zip
+
+		# cli programs/tools
+		btop
 		neofetch
 		ranger
-		btop
 
-		# graphics command line utilities
-		glxinfo
-		vulkan-tools
-
-		# programming
+		# coding
 		gcc
-		cmake
-		SDL2
-		SDL2_ttf
-		SDL2_gfx
-		SDL2_sound
-		SDL2_mixer
-		SDL2_image
-		python3
 		jupyter
-		pandoc
-		texlive.combined.scheme-full
 		mathematica
-
-		# python packages
-		# python311Packages.ebooklib
-		# python310Packages.requests
-		# python310Packages.beautifulsoup4
-		# python310Packages.scrapy
-
-		# archival / compression
-		p7zip
-		zip
-		unzip
-
-		# power management
-		powertop
-		thermald
+		python3
+		texlive.combined.scheme-full
 
 		# sound
-		alsa-lib
-		alsa-utils
-		flac
+		# alsa-lib
+		# alsa-utils
+		# flac
 
 		# wayland / desktop
 		wayland
