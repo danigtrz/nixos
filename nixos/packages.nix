@@ -4,7 +4,7 @@
 	environment.systemPackages = with pkgs; [
 
 		# utilities
-		git
+		brightnessctl
 		grim
 		pciutils
 		pdftk
@@ -84,9 +84,6 @@
 		# piper
 		# libratbag
 	];
-
-	# backlight
-	programs.light.enable = true;
 
 	# fonts
 	fonts.packages = with pkgs; [
