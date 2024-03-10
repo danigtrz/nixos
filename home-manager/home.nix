@@ -8,7 +8,7 @@ in
 		./ags.nix
 		# ./dconf.nix
 		./firefox.nix
-		# ./git.nix
+		./git.nix
 		./hyprland.nix
 		./kitty.nix
 		./neovim.nix
@@ -63,13 +63,6 @@ in
 			size = 11;
 		};
 	};
-
-	# services = {
-	# 	kdeconnect = {
-	# 		enable = true;
-	# 		indicator = true;
-	# 	};
-	# };
 
 	programs.home-manager.enable = true;
 	home.stateVersion = "22.11";
