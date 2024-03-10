@@ -4,12 +4,11 @@
 	environment.systemPackages = with pkgs; [
 
 		# utilities
-		brightnessctl
-		grim
+		fd
 		pciutils
 		pdftk
 		psmisc
-		slurp
+		ripgrep
 		vulkan-tools
 		wev
 		wget
@@ -30,59 +29,31 @@
 		python3
 		texlive.combined.scheme-full
 
-		# sound
-		# alsa-lib
-		# alsa-utils
-		# flac
-
-		# wayland / desktop
-		wayland
-		wayland-scanner
-		wayland-utils
-		wayland-protocols
-		xwayland
-		wlroots
-		egl-wayland
-		wl-clipboard
-		wlr-randr
-		swww
-		wofi
-
 		# file manager
 		xfce.thunar
 		gnome.file-roller
 
-		# multimedia
+		# media
+		loupe
 		mpv
 		vlc
-		feh
 
-		# images
+		# applications
+		bitwig-studio
+		discord
+		libreoffice-fresh
+		lutris
+		qbittorrent
+
+		# image editing
 		inkscape
 		krita
 		gimp
 
-		# music
+		# spotify
 		spotify
 		spotifywm
 		spicetify-cli
-
-		# steam
-		steam-run
-		# (steam.override { withJava = true; })
-
-		# misc. applications
-		networkmanagerapplet
-		# protonvpn-gui
-		# protonvpn-cli
-		libreoffice-fresh
-		bitwig-studio
-		qbittorrent
-		lutris
-		discord
-		# baobab
-		# piper
-		# libratbag
 	];
 
 	# fonts
@@ -112,6 +83,7 @@
 		dedicatedServer.openFirewall = true;
 	};
 	programs.java.enable = true;
+	programs.steam.package = pkgs.steam.override { withJava = true; };
 
 	# fcitx5
 	i18n.inputMethod = {

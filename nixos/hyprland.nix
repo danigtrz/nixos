@@ -19,7 +19,15 @@
 		pam.services.ags = {};
 	};
 
-	# environment.systemPackages = with pkgs.gnome; [];
+	environment.systemPackages = with pkgs; [
+		brightnessctl
+		wl-clipboard
+		wlr-randr
+		grim
+		slurp
+		swww
+		wofi
+	];
 
 	services = {
 		gvfs.enable = true;
