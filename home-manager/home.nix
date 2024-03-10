@@ -64,12 +64,12 @@ in
 		};
 	};
 
-	services = {
-		kdeconnect = {
-			enable = true;
-			indicator = true;
-		};
-	};
+	# services = {
+	# 	kdeconnect = {
+	# 		enable = true;
+	# 		indicator = true;
+	# 	};
+	# };
 
 	programs.home-manager.enable = true;
 	home.stateVersion = "22.11";
