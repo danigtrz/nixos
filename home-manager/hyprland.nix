@@ -69,7 +69,7 @@ in
 				
 				touchpad = {
 					natural_scroll = "yes";
-					scroll_factor = 0.8;
+					scroll_factor = 0.7;
 					clickfinger_behavior = true;
 				};
 			};
