@@ -1,1 +1,1 @@
-require("config.maps")
+require("config.keymaps")
