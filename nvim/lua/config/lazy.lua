@@ -11,11 +11,9 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup({
-	{"catppuccin/nvim", name = "catppuccin", priority = 1000},
-	{
-		'nvim-telescope/telescope.nvim', tag = '0.1.5',
-		dependencies = { 'nvim-lua/plenary.nvim' }
-	},
-	{"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"}
+require('lazy').setup({
+	{ 'catppuccin/nvim', name = 'catppuccin', priority = 1000 },
+	'nvim-lua/plenary.nvim',
+	'nvim-telescope/telescope.nvim',
+	{ 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate' }
 })
