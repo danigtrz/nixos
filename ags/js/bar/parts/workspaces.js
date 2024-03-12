@@ -13,6 +13,10 @@ const ar_zh = {
 	10: '十',
 	11: '十一',
 	12: '十二',
+	13: '十三',
+	14: '十四',
+	15: '十五',
+	16: '十六'
 };
 
 function workspaces() {
@@ -20,7 +24,7 @@ function workspaces() {
 	return Widget.Box({
 		class_name: 'workspaces',
 		spacing: 12,
-		children: Array.from({ length: 12 }, (_, i) => i + 1).map(i => Widget.Button({
+		children: Array.from({ length: 16 }, (_, i) => i + 1).map(i => Widget.Button({
 			onClicked: () => hyprland.messageAsync(`dispatch workspace ${i}`),
 			attribute: i,
 			label: ar_zh[i],
