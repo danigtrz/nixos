@@ -10,6 +10,8 @@
 		enable = true;
 		viAlias = true;
 		vimAlias = true;
+
+		extraPackages = [ "gcc" ];
 	};
 
 	xdg.configFile.nvim.source = ../nvim;
