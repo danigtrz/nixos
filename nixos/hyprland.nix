@@ -29,12 +29,6 @@
 		wofi
 	];
 
-	services = {
-		devmon.enable = true;
-		upower.enable = true;
-		accounts-daemon.enable = true;
-	};
-
 	nix.settings = {
 		substituters = [
 			"https://hyprland.cachix.org"

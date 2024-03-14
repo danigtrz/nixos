@@ -74,5 +74,13 @@ flake-overlays:
 		powerOnBoot = false;
 	};
 
+	services = {
+		gvfs.enable = true;
+		udisks2.enable = true;
+		devmon.enable = true;
+		upower.enable = true;
+		accounts-daemon.enable = true;
+	};
+
 	system.stateVersion = "23.05";
 }
