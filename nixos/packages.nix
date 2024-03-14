@@ -30,7 +30,7 @@
 		texlive.combined.scheme-full
 
 		# file manager
-		gnome.file-roller
+		# gnome.file-roller
 
 		# media
 		loupe
