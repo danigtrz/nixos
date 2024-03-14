@@ -67,6 +67,16 @@
 		dejavu_fonts
 	];
 
+	# thunar
+	programs.thunar = {
+		enable = true;
+		plugins = with pkgs.xfce; [
+			thunar-volman
+			thunar-archive-plugin
+			thunar-media-tags-plugin
+		];
+	};
+
 	# steam
 	programs.steam = {
 		enable = true;
