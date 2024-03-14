@@ -77,7 +77,7 @@ flake-overlays:
 			};
 		};
 	};
-	# services.blueman.enable = true;
+	services.blueman.enable = true;
 
 	services = {
 		gvfs.enable = true;
