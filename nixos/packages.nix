@@ -4,7 +4,6 @@
 	environment.systemPackages = with pkgs; [
 
 		# utilities
-		bluetoothctl
 		fd
 		pciutils
 		pdftk
