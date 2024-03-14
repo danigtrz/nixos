@@ -1,7 +1,7 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 
 {
-    programs.thunar = {
+	programs.thunar = {
 		enable = true;
 		plugins = with pkgs.xfce; [
 			thunar-volman
@@ -10,9 +10,12 @@
 		];
 	};
 
-    # save preferences
+	# save preferences
 	programs.xfconf.enable = true;
 
-    services.gvfs.enable = true;
-	services.tumbler.enable = true;
+	services = {
+		gvfs.enable = true;
+		tumbler.enable = true;
+		udisks2.enable = true;
+	};
 }
