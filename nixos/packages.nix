@@ -7,6 +7,7 @@
 		fd
 		pciutils
 		pdftk
+		playerctl
 		psmisc
 		ripgrep
 		vulkan-tools
