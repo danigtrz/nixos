@@ -30,7 +30,6 @@
 		texlive.combined.scheme-full
 
 		# file manager
-		xfce.thunar
 		gnome.file-roller
 
 		# media
@@ -67,14 +66,6 @@
 		liberation_ttf
 		dejavu_fonts
 	];
-
-	# thunar
-	programs.thunar.plugins = with pkgs.xfce; [
-		thunar-volman
-		thunar-archive-plugin
-		thunar-media-tags-plugin
-	];
-	services.tumbler.enable = true;
 
 	# steam
 	programs.steam = {
