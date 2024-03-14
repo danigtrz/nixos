@@ -5,7 +5,9 @@ flake-overlays:
 {
 	imports = [
 		./hardware-configuration.nix
+
 		./audio.nix
+		./filemanager.nix
 		./hyprland.nix
 		./laptop.nix
 		./locale.nix
