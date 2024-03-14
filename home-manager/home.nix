@@ -46,7 +46,10 @@ in
 		enable = true;
 		theme = {
 			name = "Catppuccin-Mocha-Pink";
-			package = pkgs.catppuccin-gtk;
+			package = pkgs.catppuccin-gtk.override {
+				accents = [ "pink" ];
+				variant = "mocha";
+			};
 		};
 		iconTheme = {
 			name = "Papirus-Dark";
@@ -61,6 +64,12 @@ in
 			name = "DejaVu Sans";
 			size = 11;
 		};
+	};
+
+	xdg.configFile = {
+		"gtk-4.0/assets".source = "${config.gtk.theme.package}/share/themes/${config.gtk.theme.name}/gtk-4.0/assets";
+		"gtk-4.0/gtk.css".source = "${config.gtk.theme.package}/share/themes/${config.gtk.theme.name}/gtk-4.0/gtk.css";
+		"gtk-4.0/gtk-dark.css".source = "${config.gtk.theme.package}/share/themes/${config.gtk.theme.name}/gtk-4.0/gtk-dark.css";
 	};
 
 	programs.home-manager.enable = true;
