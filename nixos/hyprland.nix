@@ -16,7 +16,10 @@
 
 	security = {
 		polkit.enable = true;
-		pam.services.ags = {};
+		pam.services = {
+			ags = {};
+			swaylock = {};
+		};
 	};
 
 	environment.systemPackages = with pkgs; [
