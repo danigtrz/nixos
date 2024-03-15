@@ -79,6 +79,14 @@ flake-overlays:
 	};
 	services.blueman.enable = true;
 
+	# storage optimisation
+	nix.optimise.automatic = true;
+	nix.gc = {
+		automatic = true;
+		dates = "weekly";
+		options = "--delete-older-than 30d";
+	};
+
 	services = {
 		gvfs.enable = true;
 		udisks2.enable = true;
