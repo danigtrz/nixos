@@ -3,16 +3,32 @@
 {
 	programs.vscode = {
 		enable = true;
-		extensions = with pkgs.vscode-extensions; [
-			# python
-			ms-python.python
-			ms-python.vscode-pylance
+		package = pkgs.vscode.fhs;
+		# extensions = with pkgs.vscode-extensions; [
+		# 	# nix
+		# 	bbenoist.nix
 
-			# c
-			ms-vscode.cpptools
+		# 	# python
+		# 	ms-python.python
+		# 	ms-python.vscode-pylance
+		# 	ms-tollsai.jupyter
 
-			# latex
-			james-yu.latex-workshop
-		];
+		# 	# c
+		# 	ms-vscode.cpptools-extension-pack
+
+		# 	# latex
+		# 	james-yu.latex-workshop
+
+		# 	# ai
+		# 	github.copilot
+		# 	github.copilot-chat
+
+		# 	# vim
+		# 	vscodevim.vim
+
+		# 	# theme
+		# 	catppuccin.catppuccin-vsc
+		# 	catppuccin.catppuccin-vsc-icons
+		# ];
 	};
 }
