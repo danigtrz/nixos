@@ -13,6 +13,7 @@ in
 		./neovim.nix
 		./starship.nix
 		./vscode.nix
+		./zathura.nix
 		./zsh.nix
 	];
 
