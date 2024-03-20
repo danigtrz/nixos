@@ -5,7 +5,6 @@
 
 	hardware.nvidia = {
 		modesetting.enable = true;
-		powerManagement = true;
 		powerManagement.finegrained = true;
 		prime = {
 			sync.enable = true;
