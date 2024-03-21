@@ -1,4 +1,4 @@
-{ config, ... }:
+{ pkgs, config, ... }:
 
 {
 	services.xserver.videoDrivers = [ "nvidia" ];
@@ -29,4 +29,11 @@
 	powerManagement.enable = true;
 	services.thermald.enable = true;
 	services.tlp.enable = true;
+
+	# razer
+	hardware.openrazer.enable = true;
+	environment.systemPackages = with pkgs; [
+		openrazer-daemon
+		polychromatic
+	];
 }
