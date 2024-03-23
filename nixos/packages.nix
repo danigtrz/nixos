@@ -5,6 +5,7 @@
 
 		# utilities
 		fd
+		lazygit
 		pciutils
 		pdftk
 		playerctl
