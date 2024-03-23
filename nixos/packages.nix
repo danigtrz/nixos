@@ -2,6 +2,8 @@
 
 {
 	environment.systemPackages = with pkgs; [
+		# offload script
+		(import ./scripts/nvidia-offload.nix)
 
 		# utilities
 		fd
