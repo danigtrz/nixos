@@ -44,7 +44,6 @@
 		libreoffice-fresh
 		lutris
 		qbittorrent
-		vivaldi
 
 		# image editing
 		inkscape
