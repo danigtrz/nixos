@@ -25,9 +25,11 @@
 
 		# coding
 		gcc
+		go
+		julia-bin
 		jupyter
 		mathematica
-		python3
+		python3Full
 		texlive.combined.scheme-full
 
 		# file manager
