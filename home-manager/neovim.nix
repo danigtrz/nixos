@@ -14,5 +14,5 @@
 		# extraPackages = with pkgs; [ "gcc" ];
 	};
 
-	# xdg.configFile.nvim.source = ../lazyvim;
+	xdg.configFile.nvim.source = ../nvim;
 }
