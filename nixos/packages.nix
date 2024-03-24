@@ -39,6 +39,7 @@
 		# gnome.file-roller
 
 		# media
+		feh
 		loupe
 		mpv
 		vlc
