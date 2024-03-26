@@ -104,7 +104,9 @@ flake-overlays:
 	};
 	
 	# virtualisation
-	virtualisation.vmware.host.enable = true;
+	# virtualisation.virtualbox.host.enable = true;
+	# virtualisation.virtualbox.host.enableExtensionPack = true;
+	# users.extraGroups.vboxusers.members = [ "user-with-access-to-virtualbox" ];
 
 	system.stateVersion = "23.05";
 }
