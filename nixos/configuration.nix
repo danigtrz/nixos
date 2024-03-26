@@ -102,6 +102,9 @@ flake-overlays:
 		upower.enable = true;
 		accounts-daemon.enable = true;
 	};
+	
+	# virtualisation
+	virtualisation.vmware.host.enable = true;
 
 	system.stateVersion = "23.05";
 }
