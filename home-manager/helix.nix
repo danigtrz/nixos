@@ -9,9 +9,9 @@
 		enable = true;
 		settings = {
 			editor.cursor-shape = {
-				normal = block;
-				insert = bar;
-				select = bar;
+				normal = "block";
+				insert = "bar";
+				select = "bar";
 			};
 		};
 	};
