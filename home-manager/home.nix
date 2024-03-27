@@ -8,6 +8,7 @@ in
 		./ags.nix
 		./firefox.nix
 		./git.nix
+		./helix.nix
 		./hyprland.nix
 		./kitty.nix
 		./neovim.nix
