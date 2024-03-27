@@ -1,0 +1,59 @@
+window.bar {
+	background-color: transparent;
+	color: whitesmoke;
+}
+
+.launcher,
+.workspaces,
+.player,
+.volume,
+.battery,
+.calendar,
+.clock {
+	background-color: rgb(30, 30, 46);
+	border-radius: 8px;
+	margin: 12px 6px 0px;
+	padding: 4px 10px;
+}
+
+.launcher button {
+	all: unset;
+}
+
+.player button {
+	all: unset;
+}
+
+.workspaces button {
+	all: unset;
+	background-color: transparent;
+	border: none;
+	outline: none;
+	border-radius: 8px;
+	padding: 0px 8px;
+}
+.workspaces button.focused {
+	background-color: whitesmoke;
+	color: black;
+}
+
+progress, trough {
+	min-height: 8px;
+}
+
+trough {
+	background-color: transparent;
+	border-style: solid;
+	border-width: 1px;
+	border-color: whitesmoke;
+	min-width: 80px;
+}
+
+progress {
+	background-color: whitesmoke;
+	border: none;
+}
+
+label {
+	font-weight: bold;
+}
