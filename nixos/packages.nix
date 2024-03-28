@@ -18,6 +18,7 @@
 		wget
 
 		# archival/compression
+		p7zip
 		unzip
 		zip
 
