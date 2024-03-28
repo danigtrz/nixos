@@ -31,7 +31,6 @@
 		grim
 		slurp
 		swww
-		wofi
 	];
 
 	nix.settings = {

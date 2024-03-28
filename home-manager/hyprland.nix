@@ -36,7 +36,7 @@ in
 
 		settings = {
 			exec-once = [
-				"ags -b hypr"
+				"ags"
 				"swww init"
 				"fcitx5"
 				"hyprctl setcursor Bibata-Modern-Ice 24"
@@ -122,7 +122,6 @@ in
 				"SUPER, J, togglesplit,"
 				"SUPER SHIFT, M, exit,"
 
-				# "SUPER, R, exec, wofi --show drun"
 				"SUPER, R, exec, ags -t applauncher"
 
 				"SUPER, Return, exec, kitty"
