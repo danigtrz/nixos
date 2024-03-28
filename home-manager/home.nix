@@ -9,10 +9,12 @@ in
 		./firefox.nix
 		./git.nix
 		./helix.nix
+		# ./hypridle.nix
 		./hyprland.nix
 		./kitty.nix
 		./neovim.nix
 		./starship.nix
+		# ./swaylock.nix
 		./vscode.nix
 		./zathura.nix
 		./zsh.nix
