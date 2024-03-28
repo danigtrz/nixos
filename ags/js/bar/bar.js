@@ -45,3 +45,12 @@ const bar = (monitor = 0) => Widget.Window({
 });
 
 export default bar;
+
+// App.config({
+// 	style: './style.css',
+// 	windows: [
+// 		bar()
+// 	]
+// });
+
+// export { };

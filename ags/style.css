@@ -1,9 +1,12 @@
-window.bar {
+/*
+	top bar
+*/
+
+#bar-0 {
 	background-color: transparent;
 	color: whitesmoke;
 }
 
-.launcher,
 .workspaces,
 .player,
 .volume,
@@ -14,10 +17,6 @@ window.bar {
 	border-radius: 8px;
 	margin: 12px 6px 0px;
 	padding: 4px 10px;
-}
-
-.launcher button {
-	all: unset;
 }
 
 .player button {
@@ -37,23 +36,90 @@ window.bar {
 	color: black;
 }
 
-progress, trough {
-	min-height: 8px;
-}
-
-trough {
+#bar-0 trough {
 	background-color: transparent;
+	min-width: 80px;
+	min-height: 8px;
 	border-style: solid;
 	border-width: 1px;
 	border-color: whitesmoke;
-	min-width: 80px;
 }
 
-progress {
+#bar-0 progress {
 	background-color: whitesmoke;
+	min-height: 8px;
 	border: none;
 }
 
-label {
+#bar-0 label {
 	font-weight: bold;
+}
+
+/*
+	launcher
+*/
+
+#applauncher {
+	font-family: "RobotoMono Nerd Font";
+	background-color: rgb(30, 30, 46);
+	color: whitesmoke;
+	border-color: rgb(245, 194, 231);
+	border-style: solid;
+	border-radius: 8px;
+	border-width: 2px;
+}
+
+#applauncher .outer-box {
+	padding: 24px;
+}
+
+/* #applauncher .entry-box {
+	margin-bottom: 8px;
+} */
+
+#applauncher entry {
+	all: unset;
+	background-color: rgb(30, 30, 46);
+	color: whitesmoke;
+	border-color: transparent;
+	border-style: solid;
+	border-radius: 8px;
+	border-width: 1px;
+	padding: 10px 16px;
+	margin-bottom: 6px;
+}
+
+/* #applauncher entry:icon {
+	color: rgb(126, 126, 127);
+} */
+
+#applauncher entry:focus {
+	border-color: rgb(245, 194, 231);
+}
+
+#applauncher scrolledwindow {
+	min-width: 440px;
+	min-height: 380px;
+	margin-top: 8px;
+}
+
+#applauncher button {
+	all: unset;
+	border-color: transparent;
+	border-style: solid;
+	border-radius: 8px;
+	border-width: 1px;
+}
+
+#applauncher button:focus {
+	border-color: rgb(245, 194, 231);
+}
+
+/* #applauncher button:focus {
+	background-color: rgb(245, 194, 231);
+	color: black;
+} */
+
+#applauncher image {
+	padding: 4px 8px;
 }

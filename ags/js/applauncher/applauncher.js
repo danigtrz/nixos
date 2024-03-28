@@ -1,3 +1,5 @@
+import Gtk from 'gi://Gtk?version=3.0';
+
 const { query } = await Service.import('applications');
 
 const WINDOW_NAME = 'applauncher';
@@ -9,10 +11,11 @@ const AppItem = app => Widget.Button({
 	},
 	attribute: { app },
 	child: Widget.Box({
+		class_name: 'app-box',
 		children: [
 			Widget.Icon({
 				icon: app.icon_name || '',
-				size: 42
+				size: 32
 			}),
 			Widget.Label({
 				class_name: 'title',
@@ -25,15 +28,15 @@ const AppItem = app => Widget.Button({
 	})
 });
 
-const Applauncher = ({ width = 500, height = 500, spacing = 12 }) => {
+const Applauncher = () => {
 	// list of application buttons
 	let applications = query('').map(AppItem);
 
 	// container holding buttons
 	const list = Widget.Box({
+		class_name: 'inner-box',
 		vertical: true,
-		children: applications,
-		spacing
+		children: applications
 	});
 
 	// repopulate box, so most used items are at the top
@@ -45,13 +48,15 @@ const Applauncher = ({ width = 500, height = 500, spacing = 12 }) => {
 	// search entry
 	const entry = Widget.Entry({
 		hexpand: true,
-		css: `margin-bottom: ${spacing}px;`,
+		placeholder_text: 'find anything you want',
 
 		// to launch the first item on Enter
 		on_accept: () => {
-			if (applications[0]) {
-				App.toggleWindow(WINDOW_NAME);
-				applications[0].attribute.app.launch();
+			// make sure we only consider visible (searched for) applications
+			const results = applications.filter((item) => item.visible);
+			if (results[0]) {
+				App.toggleWindow(WINDOW_NAME)
+				results[0].attribute.app.launch()
 			}
 		},
 
@@ -60,20 +65,46 @@ const Applauncher = ({ width = 500, height = 500, spacing = 12 }) => {
 			item.visible = item.attribute.app.match(text ?? '');
 		})
 	});
+	// entry.set_icon_from_icon_name(Gtk.EntryIconPosition.PRIMARY, '\udb80\udf49');
+
+	// const entry = Widget.Box({
+	// 	class_name: 'entry-box',
+	// 	children: [
+	// 		Widget.Label({
+	// 			class_name: 'search-icon',
+	// 			label: '\udb80\udf49',
+	// 			xalign: 0,
+	// 			vpack: 'center'
+	// 		}),
+	// 		Widget.Entry({
+	// 			hexpand: true,
+		
+	// 			// to launch the first item on Enter
+	// 			on_accept: () => {
+	// 				if (applications[0]) {
+	// 					App.toggleWindow(WINDOW_NAME);
+	// 					applications[0].attribute.app.launch();
+	// 				}
+	// 			},
+		
+	// 			// filter list
+	// 			on_change: ({ text }) => applications.forEach(item => {
+	// 				item.visible = item.attribute.app.match(text ?? '');
+	// 			})
+	// 		})
+	// 	]
+	// });
 
 	return Widget.Box({
+		class_name: 'outer-box',
 		vertical: true,
-		css: `margin: ${spacing * 2}px;`,
 		children: [
 			entry,
 
 			// wrap list in scrollable
 			Widget.Scrollable({
+				vscroll: 'external',
 				hscroll: 'never',
-				css: `
-					min-width: ${width}px;
-					min-height: ${height}px;
-				`,
 				child: list,
 			})
 		],
@@ -84,7 +115,7 @@ const Applauncher = ({ width = 500, height = 500, spacing = 12 }) => {
 			// when applauncher appears
 			if (visible) {
 				repopulate();
-				entry.text = '';
+				entry.set_text('');
 				entry.grab_focus();
 			}
 		})
@@ -93,14 +124,10 @@ const Applauncher = ({ width = 500, height = 500, spacing = 12 }) => {
 
 export const applauncher = Widget.Window({
 	name: WINDOW_NAME,
-	// setup: self => self.keybind('Escape', () => {
-	// 	App.closeWindow(WINDOW_NAME)
-	// }),
+	setup: self => self.keybind("Escape", () => {
+		App.closeWindow(WINDOW_NAME)
+	}),
 	visible: false,
 	keymode: 'exclusive',
-	child: Applauncher({
-		width: 500,
-		height: 500,
-		spacing: 12
-	})
+	child: Applauncher()
 });
