@@ -25,7 +25,6 @@
 
 	environment.systemPackages = with pkgs; [
 		brightnessctl
-		swaylock-effects
 		wl-clipboard
 		wlr-randr
 		grim
