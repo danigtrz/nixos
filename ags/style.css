@@ -13,7 +13,7 @@
 .battery,
 .calendar,
 .clock {
-	background-color: rgb(30, 30, 46);
+	background-color: rgba(30, 30, 46, 0.8);
 	border-radius: 8px;
 	margin: 12px 6px 0px;
 	padding: 4px 10px;
@@ -26,14 +26,14 @@
 .workspaces button {
 	all: unset;
 	background-color: transparent;
-	border: none;
-	outline: none;
+	border-color: transparent;
+	border-style: solid;
 	border-radius: 8px;
+	border-width: 2px;
 	padding: 0px 8px;
 }
 .workspaces button.focused {
-	background-color: whitesmoke;
-	color: black;
+	border-color: rgb(245, 194, 231);
 }
 
 #bar-0 trough {
@@ -61,7 +61,7 @@
 
 #applauncher {
 	font-family: "RobotoMono Nerd Font";
-	background-color: rgb(30, 30, 46, 0.8);
+	background-color: rgba(30, 30, 46, 0.8);
 	color: whitesmoke;
 	border-color: rgb(245, 194, 231);
 	border-style: solid;
@@ -72,10 +72,6 @@
 #applauncher .outer-box {
 	padding: 24px;
 }
-
-/* #applauncher .entry-box {
-	margin-bottom: 8px;
-} */
 
 #applauncher entry {
 	all: unset;
@@ -88,10 +84,6 @@
 	padding: 10px 16px;
 	margin-bottom: 6px;
 }
-
-/* #applauncher entry:icon {
-	color: rgb(126, 126, 127);
-} */
 
 #applauncher entry:focus {
 	border-color: rgb(245, 194, 231);
@@ -114,11 +106,6 @@
 #applauncher button:focus {
 	border-color: rgb(245, 194, 231);
 }
-
-/* #applauncher button:focus {
-	background-color: rgb(245, 194, 231);
-	color: black;
-} */
 
 #applauncher image {
 	padding: 4px 8px;
