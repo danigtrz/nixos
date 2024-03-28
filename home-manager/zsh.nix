@@ -10,7 +10,7 @@
 		#histSize = 10000;
 		#histFile = "~/.histfile";
 		#enableCompletion = true;
-		enableAutosuggestions = true;
+		autosuggestion.enable = true;
 		# syntaxHighlighting.enable = true;
 		# plugins = [
 		# 	{
