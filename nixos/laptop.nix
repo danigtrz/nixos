@@ -6,7 +6,7 @@
 	hardware.nvidia = {
 		modesetting.enable = true;
 		powerManagement = {
-			enable = true;
+			# enable = true;
 			finegrained = true;
 		};
 		prime = {
