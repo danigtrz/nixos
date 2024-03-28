@@ -2,7 +2,7 @@
 	top bar
 */
 
-#bar-0 {
+.bar {
 	background-color: transparent;
 	color: whitesmoke;
 }
@@ -36,7 +36,7 @@
 	border-color: rgb(245, 194, 231);
 }
 
-#bar-0 trough {
+.bar trough {
 	background-color: transparent;
 	min-width: 80px;
 	min-height: 8px;
@@ -45,13 +45,13 @@
 	border-color: whitesmoke;
 }
 
-#bar-0 progress {
+.bar progress {
 	background-color: whitesmoke;
 	min-height: 8px;
 	border: none;
 }
 
-#bar-0 label {
+.bar label {
 	font-weight: bold;
 }
 
@@ -110,3 +110,8 @@
 #applauncher image {
 	padding: 4px 8px;
 }
+
+/*
+	notifications
+*/
+
