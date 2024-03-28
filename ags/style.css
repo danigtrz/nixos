@@ -61,7 +61,7 @@
 
 #applauncher {
 	font-family: "RobotoMono Nerd Font";
-	background-color: rgb(30, 30, 46);
+	background-color: rgb(30, 30, 46, 0.8);
 	color: whitesmoke;
 	border-color: rgb(245, 194, 231);
 	border-style: solid;
@@ -79,7 +79,7 @@
 
 #applauncher entry {
 	all: unset;
-	background-color: rgb(30, 30, 46);
+	background-color: transparent;
 	color: whitesmoke;
 	border-color: transparent;
 	border-style: solid;
