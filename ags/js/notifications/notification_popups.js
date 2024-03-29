@@ -4,10 +4,10 @@ const notifications = await Service.import("notifications")
 function NotificationIcon({ app_entry, app_icon, image }) {
 	if (image) {
 		return Widget.Box({
-			// css: `background-image: url("${image}");`
-			// 	+ "background-size: contain;"
-			// 	+ "background-repeat: no-repeat;"
-			// 	+ "background-position: center;",
+			css: `background-image: url("${image}");`
+				+ "background-size: contain;"
+				+ "background-repeat: no-repeat;"
+				+ "background-position: center;",
 		})
 	}
 
@@ -110,7 +110,7 @@ export function NotificationPopups(monitor = 0) {
 
 	return Widget.Window({
 		monitor,
-		name: `notifications${monitor}`,
+		name: `notifications-${monitor}`,
 		class_name: "notification-popups",
 		anchor: ["top", "right"],
 		child: Widget.Box({

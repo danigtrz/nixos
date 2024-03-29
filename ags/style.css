@@ -75,7 +75,7 @@
 
 #applauncher entry {
 	all: unset;
-	background-color: transparent;
+	background-color: rgba(30, 30, 46, 0.8);
 	color: whitesmoke;
 	border-color: transparent;
 	border-style: solid;
@@ -115,3 +115,48 @@
 	notifications
 */
 
+.notifications {
+	margin: 40px 32px;
+}
+
+.notification {
+	min-width: 350px;
+	background-color: rgba(30, 30, 46, 0.95);
+	color: whitesmoke;
+	border-color: rgb(245, 194, 231);
+	border-style: solid;
+	border-radius: 8px;
+	border-width: 2px;
+	margin-bottom: 16px; 
+	padding: 16px;
+}
+
+.notification .body {
+	margin: 8px 0px 16px;
+}
+
+.action-button {
+	all: unset;
+	background-color: transparent;
+	border-color: rgb(245, 194, 231);
+	border-style: solid;
+	border-radius: 8px;
+	border-width: 2px;
+	padding: 4px 8px;
+	margin: 0px 40px;
+}
+
+.action-button:hover {
+	background-color: rgb(245, 194, 231);
+	color: black;
+}
+
+.notification .icon {
+	min-width: 48px;
+	min-height: 48px;
+	margin-right: 16px;
+}
+
+.notification .icon image {
+	font-size: 48px;
+}
