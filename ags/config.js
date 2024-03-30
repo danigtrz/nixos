@@ -4,7 +4,11 @@
 
 import bar from './js/bar/bar.js';
 import { applauncher } from './js/applauncher/applauncher.js';
-import { NotificationPopups } from "./js/notifications/notification_popups.js";
+import { NotificationPopups } from './js/notifications/notification_popups.js';
+
+import initNotifications from './js/notifications/notifications.js';
+
+initNotifications();
 
 export default {
 	style: './style.css',
