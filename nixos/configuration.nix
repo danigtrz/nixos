@@ -97,6 +97,7 @@ flake-overlays:
 	# files, mounting, access, etc.
 	services = {
 		gvfs.enable = true;
+		tumbler.enable = true;
 		udisks2.enable = true;
 		devmon.enable = true;
 		upower.enable = true;
