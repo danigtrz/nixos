@@ -116,23 +116,24 @@
 */
 
 .notifications {
-	margin: 40px 32px;
+	min-width: 10px;
+	min-height: 10px;
+	margin-top: 40px;
 }
 
 .notification {
 	min-width: 350px;
-	background-color: rgba(30, 30, 46, 0.95);
+	background-color: rgba(30, 30, 46, 0.9);
 	color: whitesmoke;
 	border-color: rgb(245, 194, 231);
 	border-style: solid;
 	border-radius: 8px;
 	border-width: 2px;
-	margin-bottom: 16px; 
 	padding: 16px;
 }
 
-.notification .body {
-	margin: 8px 0px 16px;
+.notification .title {
+	font-weight: bold;
 }
 
 .action-button {
@@ -143,7 +144,6 @@
 	border-radius: 8px;
 	border-width: 2px;
 	padding: 4px 8px;
-	margin: 0px 40px;
 }
 
 .action-button:hover {
@@ -152,11 +152,11 @@
 }
 
 .notification .icon {
-	min-width: 48px;
-	min-height: 48px;
+	min-width: 40px;
+	min-height: 40px;
 	margin-right: 16px;
 }
 
 .notification .icon image {
-	font-size: 48px;
+	font-size: 40px;
 }
