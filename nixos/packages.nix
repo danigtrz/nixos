@@ -84,6 +84,7 @@
 			thunar-media-tags-plugin
 		];
 	};
+	programs.xfconf.enable = true;
 
 	# steam
 	programs.steam = {
