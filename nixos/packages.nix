@@ -37,7 +37,15 @@
 		texlive.combined.scheme-full
 
 		# file manager
-		# gnome.file-roller
+		gnome.file-roller
+
+		# pcmanfm
+		pcmanfm
+		lxmenu-data
+		shared-mime-info
+
+		# nemo
+		cinnamon.nemo-with-extensions
 
 		# media
 		feh
@@ -53,6 +61,7 @@
 		qbittorrent
 
 		# image editing
+		imagemagick
 		inkscape
 		krita
 		gimp
