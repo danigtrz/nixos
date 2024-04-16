@@ -40,10 +40,14 @@ flake-overlays:
 	boot = {
 		# tmp.cleanOnBoot = true;
 		loader = {
-			timeout = 2;
-			systemd-boot.enable = true;
+			# timeout = 2;
+			# systemd-boot.enable = true;
 			efi.canTouchEfiVariables = true;
-			efi.efiSysMountPoint = "/boot/efi";
+			grub = {
+				enable = true;
+				device = "nodev";
+				useOSProber = true;
+			};
 		};
 	};
 
