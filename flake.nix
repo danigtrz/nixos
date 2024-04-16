@@ -24,7 +24,7 @@
 	outputs = { nixpkgs, home-manager, hyprland, ags, nix-matlab, ... }@inputs:
 
 	let
-		username = "rafa";
+		username = "daniel";
 		hostname = "nixos";
 		system = "x86_64-linux";
 		
@@ -54,18 +54,7 @@
 					};
 					home-manager.extraSpecialArgs = { inherit inputs username; };
 				}
-
-				# hyprland.nixosModules.default
-				# { programs.hyprland = {
-				# 	enable = true;
-				# }; }
 			];
 		};
-
-		# homeConfigurations.${username} = home-manager.lib.homeManagerConfiguration {
-		# 	inherit pkgs;
-		# 	extraSpecialArgs = { inherit inputs username; };
-		# 	modules = [ ./home-manager/home.nix ];
-		# };
 	};
 }

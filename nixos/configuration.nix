@@ -47,9 +47,19 @@ flake-overlays:
 		};
 	};
 
+	# luks
+	boot.initrd.luks.devices."luks-35a9d841-a7b5-4973-a253-c6e5fe5d2cc7".device = "/dev/disk/by-uuid/35a9d841-a7b5-4973-a253-c6e5fe5d2cc7";
+
+	# X11 keymap
+	services.xserver = {
+		layout = "us";
+		xkbVariant = "altgr-intl";
+	};
+
 	# user
 	users.users.${username} = {
 		isNormalUser = true;
+		description = "Daniel Gutierrez Monge";
 		extraGroups = [ "networkmanager" "wheel" "video" "audio" ];
 	};
 
@@ -109,5 +119,5 @@ flake-overlays:
 	# virtualisation.virtualbox.host.enableExtensionPack = true;
 	# users.extraGroups.vboxusers.members = [ "user-with-access-to-virtualbox" ];
 
-	system.stateVersion = "23.05";
+	system.stateVersion = "23.11";
 }
