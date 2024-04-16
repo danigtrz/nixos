@@ -29,10 +29,8 @@
 
 		# coding
 		gcc
-		go
-		julia-bin
 		jupyter
-		mathematica
+		# mathematica
 		python3Full
 		texlive.combined.scheme-full
 
@@ -40,18 +38,18 @@
 		gnome.file-roller
 
 		# pcmanfm
-		pcmanfm
-		lxmenu-data
-		shared-mime-info
+		# pcmanfm
+		# lxmenu-data
+		# shared-mime-info
 
 		# nemo
-		cinnamon.nemo-with-extensions
+		# cinnamon.nemo-with-extensions
 
 		# media
 		feh
 		loupe
 		mpv
-		vlc
+		# vlc
 
 		# applications
 		bitwig-studio
@@ -68,8 +66,8 @@
 
 		# spotify
 		spotify
-		spotifywm
-		spicetify-cli
+		# spotifywm
+		# spicetify-cli
 	];
 
 	# fonts

@@ -51,9 +51,9 @@ flake-overlays:
 	boot.initrd.luks.devices."luks-35a9d841-a7b5-4973-a253-c6e5fe5d2cc7".device = "/dev/disk/by-uuid/35a9d841-a7b5-4973-a253-c6e5fe5d2cc7";
 
 	# X11 keymap
-	services.xserver = {
+	services.xserver.xkb = {
 		layout = "us";
-		xkbVariant = "altgr-intl";
+		variant = "altgr-intl";
 	};
 
 	# user
