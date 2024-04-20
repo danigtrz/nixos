@@ -37,13 +37,13 @@ in
 		settings = {
 			exec-once = [
 				"ags"
-				"swww init"
+				# "swww-daemon"
 				"fcitx5"
 				"hyprctl setcursor Bibata-Modern-Ice 24"
 			];
 
 			monitor = [
-				"eDP-1,1920x1080@144,0x0,1"
+				"eDP-1,2560x1600@240,0x0,1.33"
 				",preferred,auto,1"
 			];
 
