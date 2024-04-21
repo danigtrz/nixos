@@ -32,7 +32,20 @@
 	services.thermald.enable = true;
 	services.tlp.enable = true;
 
-	environment.systemPackages = with pkgs; [
-		asusctl
-	];
+	# asus system services
+	services = {
+		asusd = {
+			enable = true;
+			enableUserService = true;
+		};
+		supergfxd = {
+			enable = true;
+			settings = {
+				vfio_enable = true;
+				hotplug_type = "Asus"; 
+			};
+		};
+	};
+
+	systemd.services.supergfxd.path = [ pkgs.pciutils pkgs.lsof ];
 }
