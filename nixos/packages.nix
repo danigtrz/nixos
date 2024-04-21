@@ -2,9 +2,6 @@
 
 {
 	environment.systemPackages = with pkgs; [
-		# offload script
-		# (import ./scripts/nvidia-offload.nix)
-
 		# utilities
 		fd
 		lazygit
@@ -45,6 +42,8 @@
 		# nemo
 		# cinnamon.nemo-with-extensions
 
+		networkmanagerapplet
+
 		# media
 		feh
 		loupe
@@ -68,6 +67,9 @@
 		spotify
 		# spotifywm
 		# spicetify-cli
+		
+		# offload script
+		# (import ./scripts/nvidia-offload.nix)
 	];
 
 	# fonts

@@ -36,18 +36,21 @@ flake-overlays:
 		};
 	};
 
+	# kernel
+	boot.kernelPackages = pkgs.linuxPackages_latest;
+
 	# bootloader
 	boot = {
 		# tmp.cleanOnBoot = true;
 		loader = {
 			# timeout = 2;
-			# systemd-boot.enable = true;
+			systemd-boot.enable = true;
 			efi.canTouchEfiVariables = true;
-			grub = {
-				enable = true;
-				device = "nodev";
-				useOSProber = true;
-			};
+			# grub = {
+			#	enable = true;
+			#	device = "nodev";
+			#	useOSProber = true;
+			# };
 		};
 	};
 
