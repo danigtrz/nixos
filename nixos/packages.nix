@@ -3,6 +3,7 @@
 {
 	environment.systemPackages = with pkgs; [
 		# utilities
+		asdf-vm
 		fd
 		lazygit
 		pciutils
