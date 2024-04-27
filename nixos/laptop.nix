@@ -22,8 +22,6 @@
 		package = config.boot.kernelPackages.nvidiaPackages.production;
 	};
 
-	hardware.nvidia.prime.offload.enableOffloadCmd = true;
-
 	hardware.opengl = {
 		enable = true;
 		driSupport = true;
