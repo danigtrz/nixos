@@ -43,7 +43,7 @@ in
 			];
 
 			monitor = [
-				"eDP-1,2560x1600@240,0x0,1.33"
+				"eDP-1,preferred,auto,1.33"
 				",preferred,auto,1"
 			];
 
@@ -126,7 +126,7 @@ in
 
 				"SUPER, Return, exec, kitty"
 
-				", Print, exec, grim -g \"$(slurp)\""
+				", XF86Launch3, exec, grim -g \"$(slurp)\""
 
 				"SUPER, left, movefocus, l"
 				"SUPER, right, movefocus, r"
@@ -157,14 +157,16 @@ in
 
 				"SUPER, mouse_down, workspace, e+1"
 				"SUPER, mouse_up, workspace, e-1"
+
+				# rotate screen
+				"SUPER_SHIFT, left, exec, hyprctl keyword monitor eDP-1,preferred,auto,1.33,transform,3"
+				"SUPER_SHIFT, right, exec, hyprctl keyword monitor eDP-1,preferred,auto,1.33,transform,1"
+				"SUPER_SHIFT, up, exec, hyprctl keyword monitor eDP-1,preferred,auto,1.33,transform,2"
+				"SUPER_SHIFT, down, exec, hyprctl keyword monitor eDP-1,preferred,auto,1.33,transform,0"
 			];
 
 			bindl = [
 				", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
-
-				", XF86AudioPlay, exec, playerctl play-pause"
-				", XF86AudioPrev, exec, playerctl previous"
-				", XF86AudioNext, exec, playerctl next"
 			];
 
 			bindle = [
