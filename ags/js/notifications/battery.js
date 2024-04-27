@@ -1,7 +1,7 @@
 export default async function init() {
 	const bat = await Service.import("battery")
 	bat.connect("notify::percent", ({ percent, charging }) => {
-		if (percent !== 15 || charging)
+		if ((percent !== 15 && percent !== 5) || charging)
 			return
 
 		Utils.notify({
