@@ -5,6 +5,7 @@
 		# utilities
 		asdf-vm
 		fd
+		gamemode
 		lazygit
 		pciutils
 		pdftk
