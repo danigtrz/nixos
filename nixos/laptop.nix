@@ -11,7 +11,7 @@
 		prime = {
 			offload = {
 				enable = false;
-				enableOffloadCmd = true;
+				enableOffloadCmd = false;
 			};
 			sync.enable = true;
 			intelBusId = "PCI:0:2:0";
