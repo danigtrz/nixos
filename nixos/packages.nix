@@ -56,7 +56,6 @@
 		bitwig-studio
 		discord
 		libreoffice-fresh
-		lutris
 		qbittorrent
 
 		# image editing
@@ -69,9 +68,10 @@
 		spotify
 		# spotifywm
 		# spicetify-cli
-		
-		# offload script
-		# (import ./scripts/nvidia-offload.nix)
+
+		# games
+		lutris
+		ppsspp-sdl-wayland
 	];
 
 	# fonts
