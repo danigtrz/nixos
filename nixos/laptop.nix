@@ -5,20 +5,18 @@
 
 	hardware.nvidia = {
 		modesetting.enable = true;
-		powerManagement = {
-			finegrained = false;
-		};
+		powerManagement.finegrained = false;
 		prime = {
-			offload = {
-				enable = false;
-				enableOffloadCmd = false;
-			};
+			# offload = {
+			# 	enable = false;
+			# 	enableOffloadCmd = false;
+			# };
 			sync.enable = true;
 			intelBusId = "PCI:0:2:0";
 			nvidiaBusId = "PCI:1:0:0";
 		};
 
-		package = config.boot.kernelPackages.nvidiaPackages.production;
+		package = config.boot.kernelPackages.nvidiaPackages.latest;
 	};
 
 	hardware.opengl = {
