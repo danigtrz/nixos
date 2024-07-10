@@ -34,16 +34,9 @@
 		texlive.combined.scheme-full
 
 		# file manager
-		gnome.file-roller
+		file-roller
 
-		# pcmanfm
-		# pcmanfm
-		# lxmenu-data
-		# shared-mime-info
-
-		# nemo
-		# cinnamon.nemo-with-extensions
-
+		# nm-applet
 		networkmanagerapplet
 
 		# media
