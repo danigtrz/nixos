@@ -16,6 +16,10 @@
 		wev
 		wget
 
+		# screen capture
+		grim
+		slurp
+
 		# archival/compression
 		p7zip
 		unzip
@@ -66,6 +70,9 @@
 		lutris
 		ppsspp-sdl-wayland
 	];
+
+	# backlight
+	programs.light.enable = true;
 
 	# fonts
 	fonts.packages = with pkgs; [

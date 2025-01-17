@@ -24,11 +24,8 @@
 	};
 
 	environment.systemPackages = with pkgs; [
-		brightnessctl
 		wl-clipboard
 		wlr-randr
-		grim
-		slurp
 		swww
 	];
 
