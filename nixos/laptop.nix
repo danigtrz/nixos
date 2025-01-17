@@ -5,7 +5,11 @@
 
 	hardware.nvidia = {
 		modesetting.enable = true;
-		powerManagement.finegrained = false;
+		powerManagement = {
+			enable = false;
+			finegrained = false;
+		};
+
 		prime = {
 			# offload = {
 			# 	enable = false;
@@ -16,7 +20,11 @@
 			nvidiaBusId = "PCI:1:0:0";
 		};
 
-		package = config.boot.kernelPackages.nvidiaPackages.beta;
+		open = false;
+
+		nvidiaSettings = true;
+
+		package = config.boot.kernelPackages.nvidiaPackages.stable;
 	};
 
 	hardware.graphics = {

@@ -69,11 +69,12 @@
 
 	# fonts
 	fonts.packages = with pkgs; [
-		(nerdfonts.override { fonts = [ "RobotoMono" "FiraCode" ]; })
+		nerd-fonts.fira-code
+		nerd-fonts.roboto-mono
 		roboto
 		fira-code-symbols
 		noto-fonts
-		noto-fonts-cjk
+		noto-fonts-cjk-sans
 		noto-fonts-emoji
 		liberation_ttf
 		dejavu_fonts

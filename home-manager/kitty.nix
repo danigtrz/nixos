@@ -19,7 +19,7 @@
 		
 		font.name = "RobotoMono Nerd Font";
 		
-		theme = "Catppuccin-Mocha";
+		themeFile = "Catppuccin-Mocha";
 		
 		keybindings = {
 			"ctrl+c" = "copy_or_interrupt";
