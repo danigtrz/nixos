@@ -4,6 +4,7 @@
 	environment.systemPackages = with pkgs; [
 		# utilities
 		asdf-vm
+		brightnessctl
 		fd
 		gamemode
 		lazygit
@@ -70,13 +71,7 @@
 		# games
 		lutris
 		ppsspp-sdl-wayland
-
-		# backlight
-		brightnessctl
 	];
-
-	# backlight
-	programs.light.enable = true;
 
 	# fonts
 	fonts.packages = with pkgs; [
