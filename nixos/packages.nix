@@ -70,6 +70,9 @@
 		# games
 		lutris
 		ppsspp-sdl-wayland
+
+		# backlight
+		brightnessctl
 	];
 
 	# backlight
