@@ -32,6 +32,7 @@
 
 		# coding
 		gcc
+		godot_4
 		jupyter
 		# mathematica
 		python3Full
