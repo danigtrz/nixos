@@ -6,6 +6,7 @@
 		dotDir = ".config/zsh";
 		shellAliases = {
 			update = "sudo nixos-rebuild switch --flake '.#'";
+			start = "Hyprland";
 		};
 		#histSize = 10000;
 		#histFile = "~/.histfile";
