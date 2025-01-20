@@ -38,6 +38,12 @@ flake-overlays:
 
 	# kernel
 	boot.kernelPackages = pkgs.linuxPackages_latest;
+	boot.kernelPatches = [ {
+		name = "backlight_fix";
+		patch = "./0001-drm-amd-display-Fix-programming-backlight-on-OLED-pa.patch";
+		extraConfig = ''
+		'';
+	} ];
 
 	# bootloader
 	boot = {
