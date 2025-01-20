@@ -12,6 +12,4 @@
 			accountsservice
 		];
 	};
-
-	home.packages = [inputs.astal.packages.${system}.default];
 }
