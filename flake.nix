@@ -11,7 +11,9 @@
 
 		hyprland.url = "github:hyprwm/Hyprland";
 
-		ags.url = "github:Aylur/ags";
+		ags.url = "github:aylur/ags";
+
+		astal.url = "github:aylur/astal";
 
 		nix-matlab = {
 			url = "gitlab:doronbehar/nix-matlab";
