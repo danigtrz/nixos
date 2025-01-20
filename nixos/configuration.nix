@@ -66,7 +66,7 @@ flake-overlays:
 	# user
 	users.users.${username} = {
 		isNormalUser = true;
-		description = "Daniel Gutierrez Monge";
+		description = "Daniel";
 		extraGroups = [ "networkmanager" "wheel" "video" "audio" ];
 	};
 
