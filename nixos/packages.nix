@@ -2,36 +2,40 @@
 
 {
 	environment.systemPackages = with pkgs; [
-		# utilities
+		# utilities (general)
 		asdf-vm
 		brightnessctl
 		fd
 		gamemode
 		lazygit
+		networkmanagerapplet
 		pciutils
 		pdftk
-		playerctl
 		psmisc
 		ripgrep
 		vulkan-tools
 		wev
 		wget
 
-		# screen capture
+		# utitlies (media)
+		playerctl
+
+		# utilies (screen)
 		grim
 		slurp
+		swww
+		wl-clipboard
+		wlr-randr
 
-		# archival/compression
+		# utilities (archival/compression)
 		p7zip
 		unzip
 		zip
 
-		# cli programs/tools
-		btop
-		neofetch
-		ranger
+		# utilities (file manager)
+		file-roller
 
-		# coding
+		# code
 		gcc
 		godot_4
 		jupyter
@@ -39,34 +43,30 @@
 		python3Full
 		texlive.combined.scheme-full
 
-		# file manager
-		file-roller
+		# programs (cli)
+		btop
+		neofetch
+		ranger
 
-		# nm-applet
-		networkmanagerapplet
-
-		# media
-		feh
-		loupe
-		mpv
-		# vlc
-
-		# applications
+		# programs (gui)
 		bitwig-studio
 		discord
 		libreoffice-fresh
 		qbittorrent
 
-		# image editing
+		# programs (media)
+		feh
+		loupe
+		mpv
+		spotify
+		# spotifywm
+		# spicetify-cli
+
+		# programs (images)
 		imagemagick
 		inkscape
 		krita
 		gimp
-
-		# spotify
-		spotify
-		# spotifywm
-		# spicetify-cli
 
 		# games
 		lutris

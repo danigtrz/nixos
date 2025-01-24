@@ -23,12 +23,6 @@
 		};
 	};
 
-	environment.systemPackages = with pkgs; [
-		wl-clipboard
-		wlr-randr
-		swww
-	];
-
 	nix.settings = {
 		substituters = [
 			"https://hyprland.cachix.org"
