@@ -19,7 +19,6 @@
 		polkit.enable = true;
 		pam.services = {
 			ags = {};
-			swaylock = {};
 		};
 	};
 
