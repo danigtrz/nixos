@@ -1,4 +1,4 @@
-import { App } from "astal/gtk4"
+import { App } from "astal/gtk3"
 import Bar from "./widget/bar"
 
 App.start({
