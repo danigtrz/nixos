@@ -40,12 +40,12 @@ flake-overlays:
 	boot.kernelPackages = pkgs.linuxPackages_latest;
 	
 	# asus backlight patch
-	boot.kernelPatches = [
-		{
-			name = "backlight";
-			patch = ./0001-drm-amd-display-Fix-programming-backlight-on-OLED-pa.patch;
-		}
-	];
+	#boot.kernelPatches = [
+	#	{
+	#		name = "backlight";
+	#		patch = ./0001-drm-amd-display-Fix-programming-backlight-on-OLED-pa.patch;
+	#	}
+	#];
 
 	# bootloader
 	boot = {
