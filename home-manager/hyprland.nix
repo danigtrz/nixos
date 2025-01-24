@@ -6,10 +6,9 @@
 		package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
 		settings = {
 			exec-once = [
-				"ags"
-				# "swww-daemon"
-				"fcitx5"
 				"hyprctl setcursor Bibata-Modern-Ice 24"
+				# "ags"
+				"fcitx5"
 			];
 
 			monitor = [
@@ -92,7 +91,7 @@
 				"SUPER, J, togglesplit,"
 				"SUPER SHIFT, M, exit,"
 
-				# "SUPER, R, exec, ags -t applauncher"
+				"SUPER, R, exec, astal -t applauncher"
 
 				"SUPER, Return, exec, kitty"
 
