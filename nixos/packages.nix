@@ -52,6 +52,7 @@
 		bitwig-studio
 		discord
 		libreoffice-fresh
+		obsidian
 		qbittorrent
 
 		# programs (media)
