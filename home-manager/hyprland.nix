@@ -13,6 +13,7 @@
 
 			monitor = [
 				"eDP-1,preferred,auto,1.33"
+				"HDMI-A-1,preferred,1210x0,1"
 				",preferred,auto,1"
 			];
 
