@@ -118,4 +118,10 @@
 			fcitx5-chinese-addons
 		];
 	};
+
+	# jellyfin
+	services.jellyfin = {
+		enable = true;
+		openFirewall = true;
+	};
 }
