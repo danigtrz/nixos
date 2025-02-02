@@ -13,8 +13,7 @@
 
 			monitor = [
 				"eDP-1,preferred,auto,1.33"
-				"HDMI-A-1,preferred,1210x0,1"
-				",preferred,auto,1"
+				"desc:Sony SONY TV  *30 0x01010101,3840x2160@60,auto,2"
 			];
 
 			general = {
