@@ -57,9 +57,9 @@
 
 		# programs (media)
 		feh
-		jellyfin
-		jellyfin-web
-		jellyfin-ffmpeg
+		# jellyfin
+		# jellyfin-web
+		# jellyfin-ffmpeg
 		loupe
 		mpv
 		spotify
