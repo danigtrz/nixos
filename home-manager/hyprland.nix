@@ -27,6 +27,10 @@
 				"col.inactive_border" = "rgba(1e1e2eff)";			
 			};
 
+			debug = {
+				disable_logs = false;
+			};
+
 			misc = {
 				disable_hyprland_logo = true;
 			};
