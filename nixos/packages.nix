@@ -121,8 +121,8 @@
 
 	# jellyfin
 	services.jellyfin = {
-		enable = true;
-		openFirewall = true;
+		enable = false;
+		openFirewall = false;
 		user = "daniel";
 	};
 }
