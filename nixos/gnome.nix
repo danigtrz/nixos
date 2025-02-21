@@ -27,10 +27,10 @@
 
 	programs.dconf.enable = true;
 
-	environment.systemPackages = [
+	environment.systemPackages = (with pkgs; [
 		adwaita-icon-theme
-		pkgs.gnomeExtensions.appindicator
-	];
+		gnomeExtensions.appindicator
+	]);
 
 	services.udev.packages = with pkgs; [ gnome.gnome-settings-daemon ];
 }
