@@ -28,7 +28,7 @@
 	programs.dconf.enable = true;
 
 	environment.systemPackages = [
-		gnome.adwaita-icon-theme
+		adwaita-icon-theme
 		pkgs.gnomeExtensions.appindicator
 	];
 
