@@ -34,7 +34,7 @@
 
 	powerManagement.enable = true;
 	services.thermald.enable = true;
-	services.tlp.enable = true;
+	services.tlp.enable = false; # switched to false while installing gnome
 
 	# asus system services
 	services = {
