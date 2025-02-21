@@ -18,11 +18,9 @@
 
 			general = {
 				layout = "dwindle";
-
 				gaps_in = 6;
 				gaps_out = 12;
 				border_size = 2;
-				
 				"col.active_border" = "rgba(cba6f7ee) rgba(f5c2e7ee) 45deg";
 				"col.inactive_border" = "rgba(1e1e2eff)";			
 			};
@@ -58,23 +56,10 @@
 
 			gestures = {
 				workspace_swipe = true;
-				# workspace_swipe_distance = 300;
 			};
 
 			decoration = {
 				rounding = 8;
-			};
-
-			animations = {
-				enabled = "yes";
-				bezier = "myBezier, 0.05, 0.9, 0.1, 1.05";
-				animation = [
-					"windows, 1, 7, myBezier"
-					"windowsOut, 1, 7, default, popin 80%"
-					"border, 1, 10, default"
-					"fade, 1, 7, default"
-					"workspaces, 1, 6, default"
-				];
 			};
 
 			windowrule = let
