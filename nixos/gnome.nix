@@ -5,7 +5,7 @@
 		enable = true;
 		displayManager.gdm.enable = true;
 		displayManager.gnome.enable = true;
-	}
+	};
 
 	environment.gnome.excludePackages = (with pkgs; [
 		atomix
