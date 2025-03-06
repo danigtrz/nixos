@@ -30,7 +30,6 @@
 	environment.systemPackages = (with pkgs; [
 		adwaita-icon-theme
 		gnomeExtensions.appindicator
+		gnome-settings-daemon
 	]);
-
-	services.udev.packages = with pkgs; [ gnome.gnome-settings-daemon ];
 }
