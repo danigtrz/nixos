@@ -75,6 +75,7 @@
 		# games
 		lutris
 		ppsspp-sdl-wayland
+		prismlauncher
 	];
 
 	# fonts
