@@ -8,7 +8,6 @@ flake-overlays:
 
 		./audio.nix
 		./hyprland.nix
-		./kde.nix
 		./laptop.nix
 		./locale.nix
 		./packages.nix
