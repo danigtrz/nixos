@@ -32,7 +32,7 @@
 
 		package = config.boot.kernelPackages.nvidiaPackages.stable;
 
-		dynamicBoost.enable = lib.mkDefault true;
+		dynamicBoost.enable = true;
 	};
 
 	hardware.graphics = {
@@ -42,12 +42,12 @@
 
 	powerManagement.enable = true;
 	services.thermald.enable = true;
-	services.tlp.enable = true; # switched to false while installing gnome
+	services.tlp.enable = true;
 
 	# asus system services
 	services = {
 		asusd = {
-			enable = lib.mkDefault true;
+			enable = true;
 			enableUserService = true;
 		};
 		supergfxd.enable = true;
