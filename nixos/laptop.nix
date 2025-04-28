@@ -1,6 +1,12 @@
 { pkgs, config, libs, ... }:
 
 {
+	# display backlight
+	boot.kernelParams = [
+		"i915.enable_dpcd_backlight=1"
+		"nvidia.NVreg_EnableBacklightHandler=0"
+	];
+
 	services.xserver.videoDrivers = [ "nvidia" ];
 
 	hardware.nvidia = {
