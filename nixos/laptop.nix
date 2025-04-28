@@ -1,4 +1,4 @@
-{ pkgs, config, libs, ... }:
+{ pkgs, config, lib, ... }:
 
 {
 	# display backlight
@@ -30,7 +30,9 @@
 
 		nvidiaSettings = true;
 
-		package = config.boot.kernelPackages.nvidiaPackages.beta;
+		package = config.boot.kernelPackages.nvidiaPackages.stable;
+
+		dynamicBoost.enable = lib.mkDefault true;
 	};
 
 	hardware.graphics = {
@@ -40,22 +42,16 @@
 
 	powerManagement.enable = true;
 	services.thermald.enable = true;
-	services.tlp.enable = false; # switched to false while installing gnome
+	services.tlp.enable = true; # switched to false while installing gnome
 
 	# asus system services
 	services = {
 		asusd = {
-			enable = true;
+			enable = lib.mkDefault true;
 			enableUserService = true;
 		};
-		supergfxd = {
-			enable = true;
-			settings = {
-				vfio_enable = true;
-				hotplug_type = "Asus"; 
-			};
-		};
+		supergfxd.enable = true;
 	};
 
-	systemd.services.supergfxd.path = [ pkgs.pciutils pkgs.lsof ];
+	systemd.services.supergfxd.path = [ pkgs.pciutils ];
 }
