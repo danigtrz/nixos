@@ -53,6 +53,7 @@
 		bitwig-studio
 		discord
 		libreoffice-fresh
+		librewolf
 		obsidian
 		qbittorrent
 
