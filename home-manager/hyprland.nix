@@ -13,7 +13,8 @@
 
 			monitor = [
 				"eDP-1,preferred,auto,1.33"
-				"desc:Sony SONY TV  *30 0x01010101,highres,auto,2,mirror,eDP-1"
+				# "desc:Sony SONY TV  *30 0x01010101,highres,auto,2,mirror,eDP-1"
+				",preferred,auto,1"
 			];
 
 			general = {
