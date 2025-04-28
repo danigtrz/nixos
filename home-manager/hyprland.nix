@@ -62,15 +62,15 @@
 				rounding = 8;
 			};
 
-			windowrule = let
-				f = regex: "float, ^(${regex})$";
-			in [
-				(f "MATLAB R2023b - academic use")
-				# "opacity 0.8 0.8,^(kitty)$"
-				"tile,title:^(MATLAB R2023b - academic use)$"
-				# "windowdance,^(MATLAB R2023b - academic use)$"
-				"noinitialfocus,^(MATLAB R2023b - academic use)$"
-			];
+			#windowrule = let
+			#	f = regex: "float, ^(${regex})$";
+			#in [
+			#	(f "MATLAB R2023b - academic use")
+			#	# "opacity 0.8 0.8,^(kitty)$"
+			#	"tile,title:^(MATLAB R2023b - academic use)$"
+			#	# "windowdance,^(MATLAB R2023b - academic use)$"
+			#	"noinitialfocus,^(MATLAB R2023b - academic use)$"
+			#];
 
 			bind = [
 				"SUPER, Q, killactive,"
