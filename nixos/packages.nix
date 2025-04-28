@@ -42,6 +42,7 @@
 		# mathematica
 		python3Full
 		texlive.combined.scheme-full
+		unityhub
 
 		# programs (cli)
 		btop
