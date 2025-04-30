@@ -17,7 +17,7 @@
 			inherit pkgs;
 			src = ../ags;
 			name = "desktop-shell"; # executable name
-			gtk4 = true;
+			gtk4 = false;
 			entry = "app.ts";
 			
 			extraPackages = with inputs.ags.packages.${pkgs.system}; [
