@@ -1,0 +1,48 @@
+@use "sass:color";
+
+$bg: rgba(30, 30, 46, 0.8);
+$fg: whitesmoke;
+$accent: #cba6f7;
+$accent2: #f5c2e7;
+$rad: 8px;
+
+window.Bar {
+	background-color: transparent;
+	color: $fg;
+
+	.Workspaces {
+		background-color: $bg;
+		border-radius: $rad;
+		margin: 12px 12px 0px;
+		padding: 4px 8px;
+
+		button {
+			all: unset;
+			background-color: transparent;
+			border-color: $fg;
+			border-style: solid;
+			border-radius: $rad;
+			border-width: 2px;
+			margin: 0px 4px;
+			padding: 0px 8px;
+		}
+
+		button.focused {
+			border-color: $accent;
+		}
+	}
+
+	.Battery {
+		background-color: $bg;
+		border-radius: $rad;
+		margin: 12px 12px 0px;
+		padding: 4px 8px;
+	}
+
+	.Time {
+		background-color: $bg;
+		border-radius: $rad;
+		margin: 12px 12px 0px;
+		padding: 4px 8px;
+	}
+}
