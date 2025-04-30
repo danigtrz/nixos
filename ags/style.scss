@@ -7,6 +7,8 @@ $accent2: #f5c2e7;
 $rad: 8px;
 
 window.Bar {
+	all: unset;
+
 	background-color: transparent;
 	color: $fg;
 
@@ -44,5 +46,66 @@ window.Bar {
 		border-radius: $rad;
 		margin: 12px 12px 0px;
 		padding: 4px 8px;
+	}
+}
+
+window#applauncher {
+	all: unset;
+
+	box.Applauncher {
+		background-color: $bg;
+		color: $fg;
+		
+		border-color: $accent;
+		border-style: solid;
+		border-radius: $rad;
+		border-width: 2px;
+
+		padding: 24px;
+
+		entry {
+			background-color: rgb(30, 30, 46);
+			color: $fg;
+			border-color: transparent;
+			border-style: solid;
+			border-radius: 8px;
+			border-width: 1px;
+			margin-bottom: 20px;
+			padding: 10px 16px;
+		}
+
+		// entry:focus {
+		// 	border-color: $accent2;
+		// }
+
+		button {
+			all: unset;
+
+			background-color: rgb(30, 30, 46);
+			color: $fg;
+
+			border-color: $accent;
+			border-style: solid;
+			border-radius: $rad;
+			border-width: 2px;
+
+			margin: 0px;
+			padding: 6px 12px;
+
+			icon {
+				font-size: 40px;
+				margin: 0px;
+				padding: 0px;
+			}
+
+			label.name {
+				font-weight: bold;
+				padding: 0px 12px;
+			}
+		}
+
+		box.not-found {
+			margin: 20px 0px;
+		}
 	}
 }

@@ -8,6 +8,6 @@ App.start({
 	instanceName: "interface",
 	main() {
 		Bar()
-		// Applauncher()
+		Applauncher()
 	}
 })

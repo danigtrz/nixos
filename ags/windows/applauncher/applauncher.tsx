@@ -21,12 +21,6 @@ function AppButton({ app }: { app: Apps.Application }) {
 					xalign={0}
 					label={app.name}
 				/>
-				{app.description && <label
-					className="description"
-					wrap
-					xalign={0}
-					label={app.description}
-				/>}
 			</box>
 		</box>
 	</button>
@@ -79,8 +73,8 @@ export default function Applauncher() {
 						className="not-found"
 						vertical
 						visible={list.as(l => l.length === 0)}>
-						<icon icon="system-search-symbolic" />
-						<label label="No match found" />
+						{/* <icon icon="system-search-symbolic" /> */}
+						<label label="..." />
 					</box>
 				</box>
 				<eventbox expand onClick={hide} />
