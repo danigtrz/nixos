@@ -74,9 +74,9 @@ window#applauncher {
 			padding: 10px 16px;
 		}
 
-		// entry:focus {
-		// 	border-color: $accent2;
-		// }
+		entry:focus {
+			border-color: $fg;
+		}
 
 		button {
 			all: unset;
@@ -84,7 +84,7 @@ window#applauncher {
 			background-color: rgb(30, 30, 46);
 			color: $fg;
 
-			border-color: $accent;
+			border-color: transparent;
 			border-style: solid;
 			border-radius: $rad;
 			border-width: 2px;
@@ -102,6 +102,10 @@ window#applauncher {
 				font-weight: bold;
 				padding: 0px 12px;
 			}
+		}
+
+		button:focus {
+			border-color: $fg;
 		}
 
 		box.not-found {
