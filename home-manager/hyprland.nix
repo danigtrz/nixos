@@ -81,7 +81,7 @@
 				"SUPER, J, togglesplit,"
 				"SUPER SHIFT, M, exit,"
 
-				"SUPER, R, exec, astal -t applauncher"
+				"SUPER, R, exec, astal -i interface -t applauncher"
 
 				"SUPER, Return, exec, kitty"
 
