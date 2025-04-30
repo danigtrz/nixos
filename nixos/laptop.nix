@@ -32,7 +32,7 @@
 
 		package = config.boot.kernelPackages.nvidiaPackages.stable;
 
-		dynamicBoost.enable = true;
+		# dynamicBoost.enable = true;
 	};
 
 	hardware.graphics = {
