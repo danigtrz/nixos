@@ -77,10 +77,10 @@ flake-overlays:
 	};
 
 	# display manager
-	services.displayManager.sddm = {
-		enable = true;
-		wayland.enable = true;
-	};
+	# services.displayManager.sddm = {
+	# 	enable = true;
+	# 	wayland.enable = true;
+	# };
 
 	# shell
 	programs.zsh.enable = true;
