@@ -7,6 +7,7 @@
 		settings = {
 			exec-once = [
 				"desktop-shell"
+				"swww-daemon"
 				"hyprctl setcursor Bibata-Modern-Ice 24"
 				"fcitx5"
 			];
