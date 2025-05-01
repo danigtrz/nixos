@@ -76,6 +76,12 @@ flake-overlays:
 		networkmanager.enable = true;
 	};
 
+	# display manager
+	services.displayManager.sddm = {
+		enable = true;
+		wayland.enable = true;
+	}
+
 	# shell
 	programs.zsh.enable = true;
 	users.defaultUserShell = pkgs.zsh;
