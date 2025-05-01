@@ -8,6 +8,7 @@
 			exec-once = [
 				"desktop-shell"
 				"swww-daemon"
+				"swww img ~/Pictures/wlop/morning/morning2.png"
 				"hyprctl setcursor Bibata-Modern-Ice 24"
 				"fcitx5"
 			];
