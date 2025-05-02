@@ -7,6 +7,7 @@ flake-overlays:
 		./hardware-configuration.nix
 
 		./audio.nix
+		./gnome.nix
 		./hyprland.nix
 		./laptop.nix
 		./locale.nix
