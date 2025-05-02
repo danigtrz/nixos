@@ -7,6 +7,7 @@ in
 	imports = [
 		./ags.nix
 		./git.nix
+		./gnome.nix
 		./helix.nix
 		./hyprland.nix
 		./kitty.nix
