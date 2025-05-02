@@ -42,7 +42,7 @@
 
 	powerManagement.enable = true;
 	services.thermald.enable = true;
-	services.tlp.enable = true;
+	# services.tlp.enable = true;
 
 	# asus system services
 	services = {
