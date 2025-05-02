@@ -36,7 +36,7 @@ function BatteryIndicator() {
 	</box>
 }
 
-function Time({ format = "%B %e - $H:$M" }) {
+function Time({ format = "%B %e - %H:%M" }) {
 	const time = Variable<string>("").poll(1000, () =>
 		GLib.DateTime.new_now_local().format(format)!)
 
