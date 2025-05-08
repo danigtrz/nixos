@@ -1,8 +1,15 @@
 { inputs, pkgs, config, ... }:
 
 {
+	imports = [
+		inputs.hyprland-unity-fix.nixosModules.hyprlandUnityFixModule
+	];
+
 	hyprlandUnityFix = {
 		enable = true;
+		configRules = [
+			"windowrulev2 = stayfocused, class:^Unity$"
+		];
 	};
 
 	wayland.windowManager.hyprland = {
