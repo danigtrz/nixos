@@ -2,7 +2,7 @@
 
 {
 	hyprlandUnityFix = {
-    	enable = true;
+		enable = true;
 	};
 
 	wayland.windowManager.hyprland = {
