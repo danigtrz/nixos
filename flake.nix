@@ -16,9 +16,11 @@
 		nix-matlab = {
 			url = "gitlab:doronbehar/nix-matlab";
 		};
+
+		hyprland-unity-fix.url = "github:nnra6864/HyprlandUnityFix";
 	};
 
-	outputs = { nixpkgs, home-manager, hyprland, ags, nix-matlab, ... }@inputs:
+	outputs = { nixpkgs, home-manager, hyprland, ags, nix-matlab, hyprland-unity-fix, ... }@inputs:
 
 	let
 		username = "daniel";
