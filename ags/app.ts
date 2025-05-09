@@ -11,3 +11,14 @@ App.start({
 		Applauncher()
 	}
 })
+
+/*
+import { App } from "astal/gtk4";
+import windows from "./windows";
+
+App.start({
+	main() {
+		windows.map((win)) => App.get_monitors().map(win)
+	}
+});
+*/
