@@ -27,6 +27,70 @@ function Workspaces() {
 	</box>
 }
 
+// function Media() {
+// 	const mpris = Mpris.get_default()
+
+// 	return <box className="Media" visible={bind(mpris, "players").as(ps => !!ps[0])}>
+// 		{bind(mpris, "players").as(ps => ps[0] ? (
+// 			<box>
+// 				<box
+// 					className="Cover"
+// 					valign={Gtk.Align.CENTER}
+// 					css={bind(ps[0], "coverArt").as(cover =>
+// 						`background-image: url('${cover}');`
+// 					)}
+// 				/>
+// 				<label
+// 					label={bind(ps[0], "metadata").as(() =>
+// 						`${ps[0].title} - ${ps[0].artist}`
+// 					)}
+// 				/>
+// 			</box>
+// 		) : null)}
+// 	</box>
+// }
+
+function Media() {
+	const mpris = Mpris.get_default();
+
+	return (
+		<box className="Media" visible={bind(mpris, "players").as(ps => !!ps[0])}>
+			{bind(mpris, "players").as(ps => ps[0] && (
+				<box>
+					{/* <box
+						className="Cover"
+						valign={Gtk.Align.CENTER}
+						css={bind(ps[0], "coverArt").as(cover =>
+							`background-image: url('${cover}');`
+						)}
+					/> */}
+					<label
+						label={bind(ps[0], "metadata").as(() =>
+							`${ps[0].title} - ${ps[0].artist}`
+						)}
+					/>
+				</box>
+			))}
+		</box>
+	);
+}
+
+// function SysTray() {
+// 	const tray = Tray.get_default()
+
+// 	return <box className="SysTray">
+// 		{bind(tray, "items").as(items => items.map(item => (
+// 			<menubutton
+// 				tooltipMarkup={bind(item, "tooltipMarkup")}
+// 				usePopover={false}
+// 				actionGroup={bind(item, "actionGroup").as(ag => ["dbusmenu", ag])}
+// 				menuModel={bind(item, "menuModel")}>
+// 				<icon gicon={bind(item, "gicon")} />
+// 			</menubutton>
+// 		)))}
+// 	</box>
+// }
+
 function BatteryIndicator() {
 	const bat = Battery.get_default()
 
@@ -60,10 +124,12 @@ export default function Bar(monitor: Gdk.Monitor) {
 				<Workspaces />
 			</box>
 			<box>
-				<Time />
+				<Media />
 			</box>
 			<box hexpand halign={Gtk.Align.END} >
+				{/* <SysTray /> */}
 				<BatteryIndicator />
+				<Time />
 			</box>
 		</centerbox>
 	</window>
