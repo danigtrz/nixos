@@ -91,6 +91,19 @@ function Media() {
 // 	</box>
 // }
 
+function AudioSlider() {
+	const speaker = Wp.get_default()?.audio.defaultSpeaker!
+
+	return <box className="AudioSlider" css="min-width: 140px">
+		<icon icon={bind(speaker, "volumeIcon")} />
+		<slider
+			hexpand
+			onDragged={({ value }) => speaker.volume = value}
+			value={bind(speaker, "volume")}
+		/>
+	</box>
+}
+
 function BatteryIndicator() {
 	const bat = Battery.get_default()
 
@@ -128,6 +141,7 @@ export default function Bar(monitor: Gdk.Monitor) {
 			</box>
 			<box hexpand halign={Gtk.Align.END} >
 				{/* <SysTray /> */}
+				<AudioSlider />
 				<BatteryIndicator />
 				<Time />
 			</box>
