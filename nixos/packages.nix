@@ -35,7 +35,8 @@
 		# utilities (file manager)
 		file-roller
 
-		# code
+		# coding
+		dotnet-sdk
 		gcc
 		godot_4
 		jupyter
