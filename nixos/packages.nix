@@ -129,4 +129,13 @@
 		openFirewall = false;
 		user = "daniel";
 	};
+
+	# redshift
+	location = {
+		latitude = 37.5;
+		longitude = -122;
+	};
+	services.redshift = {
+		enable = true;
+	};
 }
