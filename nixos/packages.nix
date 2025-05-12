@@ -132,14 +132,12 @@
 
 	# redshift
 	services.redshift = {
-		enable = true;
+		enable = false;
 		temperature = {
 			day = 5700;
 			night = 3000;
 		};
-		settings = {
-			dawn-time = "4:00-5:00";
-			dusk-time = "6:00-7:00";
-		};
+		#dawnTime = "4:00-5:00";
+		#duskTime = "6:00-7:00";
 	};
 }
