@@ -131,11 +131,15 @@
 	};
 
 	# redshift
-	location = {
-		latitude = 37.5;
-		longitude = -122.0;
-	};
 	services.redshift = {
 		enable = true;
+		temperature = {
+			day = 5700;
+			night = 3000;
+		};
+		settings = {
+			dawn-time = "4:00-5:00";
+			dusk-time = "6:00-7:00";
+		};
 	};
 }
