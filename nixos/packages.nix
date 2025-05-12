@@ -133,7 +133,7 @@
 	# redshift
 	location = {
 		latitude = 37.5;
-		longitude = -122;
+		longitude = -122.0;
 	};
 	services.redshift = {
 		enable = true;
