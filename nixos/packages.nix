@@ -56,6 +56,7 @@
 		libreoffice-fresh
 		librewolf
 		obsidian
+		protonvpn-gui
 		qbittorrent
 
 		# programs (media)
