@@ -21,6 +21,7 @@
 				"swww-daemon"
 				"swww restore"
 				"hyprctl setcursor Bibata-Modern-Ice 24"
+				"nm-applet"
 				"fcitx5"
 			];
 
