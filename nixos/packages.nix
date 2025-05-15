@@ -94,6 +94,9 @@
 		dejavu_fonts
 	];
 
+	# nm-applet
+	programs.nm-applet.enable = true;
+
 	# thunar
 	programs.thunar = {
 		enable = true;
