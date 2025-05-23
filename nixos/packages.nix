@@ -88,6 +88,7 @@
 		nerd-fonts.roboto-mono
 		roboto
 		fira-code-symbols
+		liberation_ttf
 		noto-fonts
 		noto-fonts-cjk-sans
 		noto-fonts-emoji
