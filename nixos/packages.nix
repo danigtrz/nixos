@@ -27,13 +27,11 @@
 		wl-clipboard
 		wlr-randr
 
-		# utilities (archival/compression)
+		# utilities (filing/archival/compression)
+		file-roller
 		p7zip
 		unzip
 		zip
-
-		# utilities (file manager)
-		file-roller
 
 		# coding
 		dotnet-sdk
@@ -43,7 +41,6 @@
 		# mathematica
 		python3Full
 		texlive.combined.scheme-full
-		unityhub
 
 		# programs (cli)
 		btop
@@ -58,6 +55,7 @@
 		obsidian
 		protonvpn-gui
 		qbittorrent
+		unityhub
 
 		# programs (media)
 		feh
@@ -128,11 +126,11 @@
 	};
 
 	# jellyfin
-	services.jellyfin = {
-		enable = false;
-		openFirewall = false;
-		user = "daniel";
-	};
+	# services.jellyfin = {
+	# 	enable = false;
+	# 	openFirewall = false;
+	# 	user = "daniel";
+	# };
 
 	# redshift
 	services.redshift = {
@@ -141,7 +139,7 @@
 			day = 5700;
 			night = 3000;
 		};
-		#dawnTime = "4:00-5:00";
-		#duskTime = "6:00-7:00";
+		# dawnTime = "4:00-5:00";
+		# duskTime = "6:00-7:00";
 	};
 }
