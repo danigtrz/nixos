@@ -48,6 +48,7 @@
 		ranger
 
 		# programs (gui)
+		anki-bin
 		bitwig-studio
 		discord
 		ghostty
