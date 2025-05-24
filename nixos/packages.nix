@@ -50,6 +50,7 @@
 		# programs (gui)
 		bitwig-studio
 		discord
+		ghostty
 		libreoffice-fresh
 		librewolf
 		obsidian
