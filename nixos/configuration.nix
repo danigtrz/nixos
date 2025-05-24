@@ -120,8 +120,11 @@ flake-overlays:
 
 	# files, mounting, access, etc.
 	services = {
+		# thunar
 		gvfs.enable = true;
 		tumbler.enable = true;
+
+		# other
 		udisks2.enable = true;
 		devmon.enable = true;
 		upower.enable = true;
