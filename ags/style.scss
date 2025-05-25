@@ -4,6 +4,7 @@ $bg: rgba(30, 30, 46, 0.8);
 $fg: whitesmoke;
 $accent: #cba6f7;
 $accent2: #f5c2e7;
+$error: #f38ba8;
 $rad: 8px;
 
 window.Bar {
@@ -124,6 +125,144 @@ window#applauncher {
 
 		box.not-found {
 			margin: 20px 0px;
+		}
+	}
+}
+
+window.NotificationPopups {
+	all: unset;
+}
+
+eventbox.Notification {
+	&:first-child>box {
+		margin-top: 28px;
+	}
+
+	&:last-child>box {
+		margin-bottom: 12px;
+	}
+
+	// eventboxes can not take margins so we style its inner box instead
+	>box {
+		background-color: $bg;
+		border: 2px solid $accent;
+		border-radius: $rad;
+		min-width: 400px;
+		margin: 20px 36px;
+		box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+	}
+
+	&.critical>box {
+		border: 2px solid $error;
+
+		.header {
+
+			.app-name {
+				color: $error;
+
+			}
+
+			.app-icon {
+				color: $error;
+			}
+		}
+	}
+
+	.header {
+		padding: 12px 12px 8px 12px;
+		color: $fg;
+
+		.app-icon {
+			margin: 0 8px;
+		}
+
+		.app-name {
+			font-weight: bold;
+		}
+
+		.time {
+			margin: 0 10px;
+		}
+
+		button {
+			all: unset;
+			padding: 4px;
+			min-height: 0;
+			min-width: 0;
+		}
+	}
+
+	separator {
+		margin: 0px;
+		background-color: $bg;
+	}
+
+	.content {
+		padding: 0px 12px 12px 12px;
+
+		.summary {
+			font-size: 20px;
+			color: $fg;
+		}
+
+		.body {
+			color: $fg;
+		}
+
+		.image {
+			margin-right: 12px;
+			border-radius: $rad;
+			min-width: 100px;
+			min-height: 100px;
+			background-size: cover;
+			background-position: center;
+		}
+	}
+
+	.actions {
+		margin: 0px 12px 12px 12px;
+
+		button {
+			margin: 0px 4px;
+
+			&:first-child {
+				margin-left: 0px;
+			}
+
+			&:last-child {
+				margin-right: 0px;
+			}
+		}
+	}
+}
+
+window.OSD {
+	box.OSD {
+		background-color: $bg;
+		border-radius: $rad;
+		margin: 100px;
+		padding: 12px 20px;
+		box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+	}
+
+	icon {
+		font-size: 18px;
+	}
+
+	label {
+		font-size: 18px;
+	}
+
+	levelbar {
+		trough {
+			background-color: transparent;
+			border: 1px solid $accent;
+			border-radius: $rad;
+			margin: 0px 12px;
+		}
+
+		block {
+			min-height: 6px;
 		}
 	}
 }
