@@ -91,18 +91,18 @@ function Media() {
 // 	</box>
 // }
 
-function AudioSlider() {
-	const speaker = Wp.get_default()?.audio.defaultSpeaker!
+// function AudioSlider() {
+// 	const speaker = Wp.get_default()?.audio.defaultSpeaker!
 
-	return <box className="AudioSlider" css="min-width: 140px">
-		<icon icon={bind(speaker, "volumeIcon")} />
-		<slider
-			hexpand
-			onDragged={({ value }) => speaker.volume = value}
-			value={bind(speaker, "volume")}
-		/>
-	</box>
-}
+// 	return <box className="AudioSlider" css="min-width: 140px">
+// 		<icon icon={bind(speaker, "volumeIcon")} />
+// 		<slider
+// 			hexpand
+// 			onDragged={({ value }) => speaker.volume = value}
+// 			value={bind(speaker, "volume")}
+// 		/>
+// 	</box>
+// }
 
 function BatteryIndicator() {
 	const bat = Battery.get_default()
@@ -113,7 +113,18 @@ function BatteryIndicator() {
 	</box>
 }
 
-function Time({ format = "%B %e - %H:%M" }) {
+function Date({ format = "A, %B %e" }) {
+	const time = Variable<string>("").poll(1000, () =>
+		GLib.DateTime.new_now_local().format(format)!)
+
+	return <label
+		className="Date"
+		onDestroy={() => time.drop()}
+		label={time()}
+	/>
+}
+
+function Time({ format = "%H:%M" }) {
 	const time = Variable<string>("").poll(1000, () =>
 		GLib.DateTime.new_now_local().format(format)!)
 
@@ -135,14 +146,15 @@ export default function Bar(monitor: Gdk.Monitor) {
 		<centerbox>
 			<box hexpand halign={Gtk.Align.START}>
 				<Workspaces />
+				<Media />
 			</box>
 			<box>
-				<Media />
 			</box>
 			<box hexpand halign={Gtk.Align.END} >
 				{/* <SysTray /> */}
-				<AudioSlider />
+				{/* <AudioSlider /> */}
 				<BatteryIndicator />
+				<Date />
 				<Time />
 			</box>
 		</centerbox>
