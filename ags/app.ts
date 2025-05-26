@@ -9,7 +9,7 @@ App.start({
 	css: style,
 	instanceName: "interface",
 	main() {
-		App.get_monitors().map(Bar)
+		Bar(App.get_monitors().find(monitor => monitor.is_primary()));
 		Applauncher()
 		App.get_monitors().map(NotificationPopups)
 		App.get_monitors().map(OSD)
