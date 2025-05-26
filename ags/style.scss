@@ -9,7 +9,8 @@ $rad: 8px;
 
 window.Bar {
 	all: unset;
-
+	font-family: monospace;
+	
 	background-color: transparent;
 	color: $fg;
 
@@ -54,6 +55,10 @@ window.Bar {
 		border-radius: $rad;
 		margin: 12px 12px 0px;
 		padding: 4px 8px;
+
+		icon {
+			padding: 0px 6px 0px 0px;
+		}
 	}
 
 	.Date {
@@ -141,6 +146,8 @@ window.NotificationPopups {
 }
 
 eventbox.Notification {
+	font-family: monospace;
+
 	&:first-child>box {
 		margin-top: 28px;
 	}
@@ -244,6 +251,9 @@ eventbox.Notification {
 }
 
 window.OSD {
+	all: unset;
+	font-family: monospace;
+
 	box.OSD {
 		background-color: $bg;
 		border-radius: $rad;
