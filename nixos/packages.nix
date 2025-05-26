@@ -68,14 +68,18 @@
 
 		# programs (media)
 		feh
-		# jellyfin
-		# jellyfin-web
-		# jellyfin-ffmpeg
 		loupe
 		mpv
+
+		# programs (music)
+		# mopidy
+		# mopidy-mpd
+		# mopidy-spotify
+		# mopidy-local
+		# rmpc
+		spicetify-cli
 		spotify
 		# spotifywm
-		# spicetify-cli
 
 		# programs (images)
 		imagemagick
@@ -133,13 +137,6 @@
 			fcitx5-chinese-addons
 		];
 	};
-
-	# jellyfin
-	# services.jellyfin = {
-	# 	enable = false;
-	# 	openFirewall = false;
-	# 	user = "daniel";
-	# };
 
 	# redshift
 	services.redshift = {
