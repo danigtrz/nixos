@@ -34,13 +34,16 @@
 		zip
 
 		# coding
+		bun
 		dotnet-sdk
 		gcc
 		godot_4
 		jupyter
 		# mathematica
+		odin
 		python3Full
 		texlive.combined.scheme-full
+		zig
 
 		# programs (cli)
 		btop
