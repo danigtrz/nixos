@@ -35,10 +35,12 @@
 
 		# coding
 		bun
+		cmake
 		dotnet-sdk
 		gcc
 		godot_4
 		jupyter
+		lua
 		# mathematica
 		odin
 		python3Full
