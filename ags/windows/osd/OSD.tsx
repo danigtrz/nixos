@@ -42,7 +42,7 @@ function OnScreenProgress({ visible }: { visible: Variable<boolean> }) {
 			<box className="OSD">
 				<icon icon={iconName()} />
 				<levelbar valign={Gtk.Align.CENTER} widthRequest={100} value={value()} />
-				<label label={value(v => `${Math.floor(v * 100)}%`)} />
+				<label label={value(v => `${Math.floor(v * 100)} %`)} />
 			</box>
 		</revealer>
 	)
