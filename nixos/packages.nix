@@ -38,7 +38,6 @@
 		cmake
 		dotnet-sdk
 		gcc
-		godot_4
 		jupyter
 		lua
 		# mathematica
@@ -46,6 +45,10 @@
 		python3Full
 		texlive.combined.scheme-full
 		zig
+
+		# game engines
+		godot_4
+		unityhub
 
 		# programs (cli)
 		btop
@@ -62,7 +65,6 @@
 		obsidian
 		protonvpn-gui
 		qbittorrent
-		unityhub
 
 		# programs (media)
 		feh
