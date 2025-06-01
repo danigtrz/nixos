@@ -17,7 +17,7 @@
 			background_blur = 0;
 		};
 		
-		font.name = "RobotoMono Nerd Font";
+		font.name = "Overpass Nerd Font";
 		
 		themeFile = "Catppuccin-Mocha";
 		
