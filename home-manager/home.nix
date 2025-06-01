@@ -62,8 +62,8 @@ in
 			size = 24;
 		};
 		font = {
-			name = "Roboto";
-			size = 11;
+			name = "Overpass";
+			size = 12;
 		};
 	};
 
