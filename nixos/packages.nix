@@ -98,7 +98,6 @@
 		nerd-fonts.fira-code
 		nerd-fonts.roboto-mono
 		nerd-fonts.overpass
-		dm-mono
 		roboto
 		fira-code-symbols
 		liberation_ttf
