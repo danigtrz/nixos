@@ -62,7 +62,7 @@ in
 			size = 24;
 		};
 		font = {
-			name = "DejaVu Sans";
+			name = "Roboto";
 			size = 11;
 		};
 	};
