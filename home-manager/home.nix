@@ -62,7 +62,7 @@ in
 			size = 24;
 		};
 		font = {
-			name = "Overpass";
+			name = "DejaVu";
 			size = 12;
 		};
 	};
