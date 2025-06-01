@@ -17,7 +17,7 @@
 			background_blur = 0;
 		};
 		
-		font.name = "Overpass Nerd Font";
+		font.name = "OverpassM Nerd Font";
 		font.size = 12;
 		
 		themeFile = "Catppuccin-Mocha";
