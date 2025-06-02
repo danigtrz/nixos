@@ -78,6 +78,7 @@ window.Bar {
 
 window#applauncher {
 	all: unset;
+    font-family: "OverpassM Nerd Font";
 
 	box.Applauncher {
 		background-color: $bg;
@@ -146,7 +147,7 @@ window.NotificationPopups {
 }
 
 eventbox.Notification {
-	font-family: monospace;
+	font-family: "OverpassM Nerd Font";
 
 	&:first-child>box {
 		margin-top: 28px;
@@ -252,7 +253,7 @@ eventbox.Notification {
 
 window.OSD {
 	all: unset;
-	font-family: monospace;
+	font-family: "OverpassM Nerd Font";
 
 	box.OSD {
 		background-color: $bg;
