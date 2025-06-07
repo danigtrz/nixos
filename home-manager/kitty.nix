@@ -25,10 +25,6 @@
 		keybindings = {
 			"ctrl+c" = "copy_or_interrupt";
 			"ctrl+v" = "paste_from_clipboard";
-			"ctrl+t" = "new_tab";
-			"ctrl+w" = "close_tab";
-			"ctrl+left" = "previous_tab";
-			"ctrl+right" = "next_tab";
 		};
 	};
 }
